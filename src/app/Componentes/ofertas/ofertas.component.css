@@ -6,10 +6,28 @@ mat-toolbar {
 .Subtitulo {
     justify-content: center;
     font-size: x-large;
-    margin-top: 2rem;
+    margin: 1rem;
+}
+span{
+    font-weight: bolder;
+    display: block;
+}
+#desc{
+    display: flex;
+    font-weight: 100;
+    justify-content: center;
+    background-color: #37df61;
+    color: white;
+    padding: 0.5rem;
+    border: 1px solid #37df61;
+}
+#desc:hover{
+    background-color: white;
+    color: #37df61;
+    border: 1px solid #37df61;
 }
 button{
-    margin-right: 2rem;
-    margin-left: 2rem;
-    padding: 2rem;
-  }
+    margin: 1rem;
+    padding: 0.5rem;
+    padding-top: 0.5rem;
+}
