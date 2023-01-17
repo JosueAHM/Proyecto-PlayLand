@@ -1,0 +1,13 @@
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  button{
+    margin-right: 2rem;
+    margin-left: 2rem;
+    padding: 2rem;
+  }
