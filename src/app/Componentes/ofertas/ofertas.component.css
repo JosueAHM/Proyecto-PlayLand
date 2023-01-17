@@ -1,0 +1,18 @@
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+.Juegos{
+    display: flex;
+    flex-direction: column;
+}
+.contenedorjuego{
+    padding: 5rem;
+    margin: 1rem;
+}
+.Subtitulo {
+    justify-content: center;
+    font-size: x-large;
+    margin-top: 2rem;
+}
