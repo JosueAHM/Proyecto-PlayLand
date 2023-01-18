@@ -20,36 +20,36 @@ export class ColeccionesComponent {
     {
       id: 2,
       src: '',
-      nombre: 'Resident Evil VII',
-      descripcion: 'UResident Evil 7 biohazard es la siguiente gran entrega de la renombrada serie Resident Evil y supone un nuevo hito para la franquicia, puesto que se aprovecha de sus raíces y abre la puerta a una experiencia de miedo realmente terrorífica. Con su gran cambio a la vista en primera persona y un estilo fotorrealista gracias al nuevo motor de Capcom RE Engine, Resident Evil 7 trae un nivel sin precedentes de inmersión que logra una experiencia de terror muy cercana y personal. ',
-      precio: 5.50,
+      nombre: 'Assasins Creed Ezio Collection',
+      descripcion: 'Vive la vida de Ezio, aprende los modos de los asesinos y véngate por la traición de tu familia a través de la Italia renacentista del siglo XV, en Roma, y por último en la Constantinopla del siglo XVI.',
+      precio: 11.90,
     },
     {
       id: 3,
       src: '',
-      nombre: 'Undertale',
-      descripcion: 'es un juego de rol  no tienes que matar a nadie en el que cada enemigo puede ser "derrotado" sin violencia, Baila con un limo. Acaricia a un perro. Susurra tu secreto favorito a un caballero. O ignora esta elección y haz llover destrucción sobre tus enemigos.',
+      nombre: 'Silent Hill Collection',
+      descripcion: 'Silent Hill Gold Edition Collection para PC en Español una recopilacion de la serie de terror de konami, en esta colección se incluye los titulos de silent hill del 1 al 5',
       precio: 7.50
     },
     {
       id: 4,
       src: '',
-      nombre: 'Cuphead',
-      descripcion: 'Cuphead es un videojuego perteneciente al género de corre y dispara, publicado por la empresa canadiense StudioMDHR. Fue lanzado al mercado el 29 de septiembre de 2017 para Microsoft Windows, Xbox One, Steam y PlayLand :D',
-      precio: 7.80
+      nombre: 'Grand theft Auto IV Episodes from Liberty City',
+      descripcion: 'Grand Theft Auto: Episodes From Liberty City fue el lanzamiento doble de los contenidos descargables en un solo disco: el primer episodio titulado The Lost and Damned y el segundo titulado The Ballad of Gay Tony.',
+      precio: 9.75
     },
     {
       id: 5,
       src: '',
-      nombre: 'Hollow Knight',
-      descripcion: 'Hollow Knight es una desafiante aventura de acción en 2D. Explorarás cavernas retorcidas, lucharás contra criaturas contaminadas y escaparás de intrincadas trampas, todo para resolver un antiguo misterio oculto durante mucho tiempo.',
+      nombre: 'Metal Gear Solid HD Collection',
+      descripcion: 'Metal Gear Solid HD Collection es una colección remasterizada en HD de los videojuegos Metal Gear Solid 1, Metal Gear Solid 2: Sons of Liberty, Metal Gear Solid 3: Snake Eater ',
       precio: 3.75
     },
     {
       id: 6,
       src: '',
-      nombre: 'Celeste',
-      descripcion: 'Celeste es un videojuego perteneciente al género de plataformas creado por los desarrolladores de videojuegos canadienses Maddy Thorson y Noel Berry. ',
+      nombre: 'Doom Anthology Collection',
+      descripcion: 'Doom Anthology PC Full la entrega definitiva que reúne estos clásicos de disparo. Su diabólico y enfermizo sistema que tanto encanta a sus jugadores lo hace con su versión remasterizada que incluye más realismo en sus escenas satánicas.',
       precio: 7.90
     },
   ]
