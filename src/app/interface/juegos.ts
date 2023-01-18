@@ -6,3 +6,10 @@ export interface Juegos {
     precio: number;
     descuento: string;
 }
+export interface Colecciones{
+    id: number;
+    src: string;
+    nombre: string;
+    descripcion: string;
+    precio: number;
+}

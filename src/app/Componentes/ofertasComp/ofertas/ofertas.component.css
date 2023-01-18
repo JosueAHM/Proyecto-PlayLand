@@ -4,6 +4,7 @@ mat-toolbar {
     top: 0;
 }
 .Subtitulo {
+    display: flex;
     justify-content: center;
     font-size: x-large;
     margin: 1rem;
