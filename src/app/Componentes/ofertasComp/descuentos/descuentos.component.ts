@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Juegos } from 'src/app/interface/juegos';
+import { MatDialog } from '@angular/material/dialog';
+import { CompraComponent } from '../../compra/compra.component';
 @Component({
   selector: 'app-descuentos',
   templateUrl: './descuentos.component.html',
@@ -21,7 +23,7 @@ export class DescuentosComponent {
       id: 2,
       src: '',
       nombre: 'Resident Evil VII',
-      descripcion: 'UResident Evil 7 biohazard es la siguiente gran entrega de la renombrada serie Resident Evil y supone un nuevo hito para la franquicia, puesto que se aprovecha de sus raíces y abre la puerta a una experiencia de miedo realmente terrorífica. Con su gran cambio a la vista en primera persona y un estilo fotorrealista gracias al nuevo motor de Capcom RE Engine, Resident Evil 7 trae un nivel sin precedentes de inmersión que logra una experiencia de terror muy cercana y personal. ',
+      descripcion: 'Resident Evil 7 biohazard es la siguiente gran entrega de la renombrada serie Resident Evil y supone un nuevo hito para la franquicia, puesto que se aprovecha de sus raíces y abre la puerta a una experiencia de miedo realmente terrorífica. Con su gran cambio a la vista en primera persona y un estilo fotorrealista gracias al nuevo motor de Capcom RE Engine, Resident Evil 7 trae un nivel sin precedentes de inmersión que logra una experiencia de terror muy cercana y personal. ',
       precio: 5.50,
       descuento: '75%',
     },
@@ -29,7 +31,7 @@ export class DescuentosComponent {
       id: 3,
       src: '',
       nombre: 'Undertale',
-      descripcion: 'es un juego de rol  no tienes que matar a nadie en el que cada enemigo puede ser "derrotado" sin violencia, Baila con un limo. Acaricia a un perro. Susurra tu secreto favorito a un caballero. O ignora esta elección y haz llover destrucción sobre tus enemigos.',
+      descripcion: 'Es un juego de rol  no tienes que matar a nadie en el que cada enemigo puede ser derrotado sin violencia, Baila con un limo. Acaricia a un perro. Susurra tu secreto favorito a un caballero. O ignora esta elección y haz llover destrucción sobre tus enemigos.',
       precio: 7.50,
       descuento: '25%',
     },
@@ -82,4 +84,12 @@ export class DescuentosComponent {
       descuento: '60%',
     },
   ]
+
+  constructor(private dialog:MatDialog){
+
+  }
+
+  openDialogSesion(){
+    this.dialog.open(CompraComponent)
+  }
 }

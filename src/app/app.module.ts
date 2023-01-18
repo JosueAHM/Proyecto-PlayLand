@@ -15,6 +15,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 
 
@@ -23,6 +25,7 @@ import { HeaderComponent } from './Componentes/header/header.component';
 import { OfertasComponent } from './Componentes/ofertasComp/ofertas/ofertas.component';
 import { DescuentosComponent } from './Componentes/ofertasComp/descuentos/descuentos.component';
 import { ColeccionesComponent } from './Componentes/ofertasComp/colecciones/colecciones.component';
+import { CompraComponent } from './Componentes/compra/compra.component';
 
 
 @NgModule({
@@ -31,7 +34,8 @@ import { ColeccionesComponent } from './Componentes/ofertasComp/colecciones/cole
     HeaderComponent,
     OfertasComponent,
     DescuentosComponent,
-    ColeccionesComponent
+    ColeccionesComponent,
+    CompraComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,9 @@ import { ColeccionesComponent } from './Componentes/ofertasComp/colecciones/cole
     MatDividerModule,
     MatListModule,
     MatExpansionModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDialogModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
