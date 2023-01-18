@@ -1,0 +1,10 @@
+mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+.Subtitulo {
+    justify-content: center;
+    font-size: x-large;
+    margin: 1rem;
+}

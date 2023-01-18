@@ -18,14 +18,18 @@ import {MatExpansionModule} from '@angular/material/expansion';
 
 //Componentes
 import { HeaderComponent } from './Componentes/header/header.component';
-import { OfertasComponent } from './componentes/ofertas/ofertas.component';
+import { OfertasComponent } from './Componentes/ofertasComp/ofertas/ofertas.component';
+import { DescuentosComponent } from './Componentes/ofertasComp/descuentos/descuentos.component';
+import { ColeccionesComponent } from './Componentes/ofertasComp/colecciones/colecciones.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    OfertasComponent
+    OfertasComponent,
+    DescuentosComponent,
+    ColeccionesComponent
   ],
   imports: [
     BrowserModule,
