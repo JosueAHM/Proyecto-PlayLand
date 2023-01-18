@@ -16,6 +16,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatCardModule} from '@angular/material/card';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -35,7 +37,8 @@ import { CompraComponent } from './Componentes/compra/compra.component';
     OfertasComponent,
     DescuentosComponent,
     ColeccionesComponent,
-    CompraComponent
+    CompraComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -50,8 +53,9 @@ import { CompraComponent } from './Componentes/compra/compra.component';
     MatListModule,
     MatExpansionModule,
     MatTooltipModule,
-    MatDialogModule
-    
+    MatDialogModule,
+    MatCardModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

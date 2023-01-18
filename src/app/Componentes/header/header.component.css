@@ -2,6 +2,7 @@ mat-toolbar {
     position: sticky;
     position: -webkit-sticky;
     top: 0;
+    background-color: #171a21 !important;
 }
 .example-spacer {
     flex: 1 1 auto;
@@ -20,12 +21,14 @@ mat-toolbar {
   border-radius: 50%;
 }
 #carrito:hover{
-  background-color: #3849a7;
+  background-color: #1b2838;
   margin: 1rem;
 }
-
   button{
     margin-right: 2rem;
     margin-left: 2rem;
     padding: 2rem;
+  }
+  button:hover{
+    background-color: #1b2838;
   }
