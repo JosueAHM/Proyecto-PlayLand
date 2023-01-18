@@ -6,6 +6,24 @@ mat-toolbar {
 .example-spacer {
     flex: 1 1 auto;
   }
+#playland{
+  cursor: pointer;
+  border-radius: 10%;
+}
+#carrito{
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  margin: 1rem;
+  padding: 2rem;
+  padding-top: 1rem;
+  border-radius: 50%;
+}
+#carrito:hover{
+  background-color: #3849a7;
+  margin: 1rem;
+}
+
   button{
     margin-right: 2rem;
     margin-left: 2rem;
