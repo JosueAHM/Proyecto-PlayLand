@@ -10,6 +10,7 @@
 
 .subtitulo {
     font-size: 35px;
+    font-family: Monospace;
 }
 
 .nota {
@@ -30,6 +31,7 @@ button {
     background-color: #2a475e;
     padding-top: 1.5%;
     padding-bottom: 1.5%;
+    font-family: Monospace;
 }
 
 .container {

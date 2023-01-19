@@ -5,290 +5,280 @@
 
 </head>
 
-<body>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 
-    <div class="Titulo">
-        <h1 class="subtitulo">Requisitos Medios</h1>
-    </div>
-    <mat-divider></mat-divider>
+<div class="Titulo">
+    <h1 class="subtitulo">Requisitos Medios</h1>
+</div>
+<mat-divider></mat-divider>
 
-    <div class="ContenedorPrincipal">
-        <div class="container">
-            <label class="nota">
-                <p>Bienvenido a la sección de juegos de medios requisitos para PC, estos juegos son los
-                    más
-                    comunes ya que están echos para las PC promedio que tengan al menos 4 de ram, procesador de 2.0ghz y
-                    con
-                    tarjeta de vídeo Intel HD, y por lo general son de poco peso aún que hay algunas
-                    excepciones!</p>
-            </label>
+<div class="ContenedorPrincipal">
+    <div class="container">
+        <label class="nota">
+            <h2 style="font-family: Monospace;">Bienvenido a la sección de juegos de medios requisitos para PC, estos
+                juegos son los
+                más
+                comunes ya que están echos para las PC promedio que tengan al menos 4 de ram, procesador de 2.0ghz y
+                con
+                tarjeta de vídeo Intel HD, y por lo general son de poco peso aún que hay algunas
+                excepciones!</h2>
+        </label>
 
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2019/01/Descargar-Dragon-Ball-Xenoverse-Bundle-PC-Espa%C3%B1ol.jpg?w=620&ssl=1"
-                            class="bd-placeholder-img card-img-top" width="100%" height="300"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>Imagen Juego</title>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2019/01/Descargar-Dragon-Ball-Xenoverse-Bundle-PC-Espa%C3%B1ol.jpg?w=620&ssl=1"
+                        class="bd-placeholder-img card-img-top" width="100%" height="300"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>Imagen Juego</title>
 
-                        <div class="card-body">
-                            <p class="card-text"><b>DRAGON BALL XENOVERSE</b> <br>Revive los combates más famosos de la
-                                saga gracias a tu avatar personalizado, que lucha junto a Trunks y muchos otros
-                                personajes. ¿Será esta asociación lo suficientemente fuerte para intervenir en los
-                                combates y restaurar la línea del tiempo de Dragon Ball tal y como la conocemos? ¡El
-                                juego incluye la misteriosa Tokitoki City, una nueva mecánica de juego, animación de
-                                personajes y muchas otras funciones increíbles que pronto desvelaremos!</p>
-                            <mat-expansion-panel hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        <span>Requisitos:</span>
-                                    </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <ul>
-                                    <li>{{ArrayObjRequisitos[0].sistema | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].procesador | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].memoria | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].graficos | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].directx | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].almacenamiento | json}}</li>
-                                </ul>
+                    <div class="card-body">
+                        <p class="card-text"><b>DRAGON BALL XENOVERSE</b> <br>Revive los combates más famosos de la
+                            saga gracias a tu avatar personalizado, que lucha junto a Trunks y muchos otros
+                            personajes. ¿Será esta asociación lo suficientemente fuerte para intervenir en los
+                            combates y restaurar la línea del tiempo de Dragon Ball tal y como la conocemos?.</p>
+                        <mat-expansion-panel hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span>Requisitos:</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>{{ArrayObjRequisitos[0].sistema | json}}</li>
+                                <li>{{ArrayObjRequisitos[0].procesador | json}}</li>
+                                <li>{{ArrayObjRequisitos[0].memoria | json}}</li>
+                                <li>{{ArrayObjRequisitos[0].graficos | json}}</li>
+                                <li>{{ArrayObjRequisitos[0].directx | json}}</li>
+                                <li>{{ArrayObjRequisitos[0].almacenamiento | json}}</li>
+                            </ul>
 
-                            </mat-expansion-panel>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                        Añadir al carrito </button>
-                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
-                                </div>
-                                <small class="text-muted">$39.99</small>
+                        </mat-expansion-panel>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
+                            <small class="text-muted">$39.99</small>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2021/06/Raft-the-Final-Chapter-Pivigames.jpg?w=616&ssl=1"
-                            class="bd-placeholder-img card-img-top" width="100%" height="300"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2021/06/Raft-the-Final-Chapter-Pivigames.jpg?w=616&ssl=1"
+                        class="bd-placeholder-img card-img-top" width="100%" height="300"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>ImagenJuego</title>
 
-                        <div class="card-body">
-                            <p class="card-text"><b>RAFT</b> <br>Es un juego atractivo que gira en técnicas de pesca y
-                                de supervivencia en torno básicos, mientras que solo en una balsa. No sólo puede el
-                                usuario la captura de peces y otros animales salvajes, pero él o ella también tiene la
-                                opción de dar forma a herramientas de supervivencia e incluso construir una isla privada
-                                con los materiales en la propia balsa.</p>
-                            <mat-expansion-panel hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        <span>Requisitos:</span>
-                                    </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <ul>
-                                    <li>{{ArrayObjRequisitos[1].sistema | json}}</li>
-                                    <li>{{ArrayObjRequisitos[1].procesador | json}}</li>
-                                    <li>{{ArrayObjRequisitos[1].memoria | json}}</li>
-                                    <li>{{ArrayObjRequisitos[1].graficos | json}}</li>
-                                    <li>{{ArrayObjRequisitos[1].directx | json}}</li>
-                                    <li>{{ArrayObjRequisitos[1].almacenamiento | json}}</li>
-                                </ul>
+                    <div class="card-body">
+                        <p class="card-text"><b>RAFT</b> <br>Es un juego atractivo que gira en técnicas de pesca y
+                            de supervivencia en torno básicos. No sólo puede el
+                            usuario la captura de peces y otros animales salvajes, pero él o ella también tiene la
+                            opción de dar forma a herramientas de supervivencia e incluso construir una isla privada
+                            con los materiales en la propia balsa.</p>
+                        <mat-expansion-panel hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span>Requisitos:</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>{{ArrayObjRequisitos[1].sistema | json}}</li>
+                                <li>{{ArrayObjRequisitos[1].procesador | json}}</li>
+                                <li>{{ArrayObjRequisitos[1].memoria | json}}</li>
+                                <li>{{ArrayObjRequisitos[1].graficos | json}}</li>
+                                <li>{{ArrayObjRequisitos[1].directx | json}}</li>
+                                <li>{{ArrayObjRequisitos[1].almacenamiento | json}}</li>
+                            </ul>
 
-                            </mat-expansion-panel>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                        Añadir al carrito </button>
-                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
-                                </div>
-                                <small class="text-muted">$19.99</small>
+                        </mat-expansion-panel>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
+                            <small class="text-muted">$19.99</small>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/11/Land-of-the-Vikings-Juego.jpg?w=670&ssl=1"
-                            class="bd-placeholder-img card-img-top" width="100%" height="300"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/11/Land-of-the-Vikings-Juego.jpg?w=670&ssl=1"
+                        class="bd-placeholder-img card-img-top" width="100%" height="300"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>ImagenJuego</title>
 
-                        <div class="card-body">
-                            <p class="card-text"><b>LAND OF THE VIKINGS</b> <br>Videojuego de gestion de colonias y
-                                supervivencia donde el jugador debera liderar su aldea y hacer que crezca hasta
-                                convertirse en una próspera ciudad.<br>
-                                Como usuario se deben gestionar los recursos, sobrevivir a circunstancias adversas e
-                                incursiones enemigas y guiar a los demás vikingos para solucionar juntos los conflictos
-                                sociales.</p>
-                            <mat-expansion-panel hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        <span>Requisitos:</span>
-                                    </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <ul>
-                                    <li>{{ArrayObjRequisitos[2].sistema | json}}</li>
-                                    <li>{{ArrayObjRequisitos[2].procesador | json}}</li>
-                                    <li>{{ArrayObjRequisitos[2].memoria | json}}</li>
-                                    <li>{{ArrayObjRequisitos[2].graficos | json}}</li>
-                                    <li>{{ArrayObjRequisitos[2].directx | json}}</li>
-                                    <li>{{ArrayObjRequisitos[2].almacenamiento | json}}</li>
-                                </ul>
+                    <div class="card-body">
+                        <p class="card-text"><b>LAND OF THE VIKINGS</b> <br>Videojuego de gestion de colonias y
+                            supervivencia donde el jugador debera liderar su aldea y hacer que crezca hasta
+                            convertirse en una próspera ciudad.
+                            Como usuario se deben gestionar los recursos, sobrevivir a circunstancias adversas e
+                            incursiones enemigas y guiar a los demás vikingos.</p>
+                        <mat-expansion-panel hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span>Requisitos:</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>{{ArrayObjRequisitos[2].sistema | json}}</li>
+                                <li>{{ArrayObjRequisitos[2].procesador | json}}</li>
+                                <li>{{ArrayObjRequisitos[2].memoria | json}}</li>
+                                <li>{{ArrayObjRequisitos[2].graficos | json}}</li>
+                                <li>{{ArrayObjRequisitos[2].directx | json}}</li>
+                                <li>{{ArrayObjRequisitos[2].almacenamiento | json}}</li>
+                            </ul>
 
-                            </mat-expansion-panel>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                        Añadir al carrito </button>
-                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
-                                </div>
-                                <small class="text-muted">$19.99</small>
+                        </mat-expansion-panel>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
+                            <small class="text-muted">$19.99</small>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2019/03/Sekiro-Shadows-Die-Twice-Free-Download-min.jpg?w=670&ssl=1"
-                            class="bd-placeholder-img card-img-top" width="100%" height="300"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2019/03/Sekiro-Shadows-Die-Twice-Free-Download-min.jpg?w=670&ssl=1"
+                        class="bd-placeholder-img card-img-top" width="100%" height="300"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>ImagenJuego</title>
 
-                        <div class="card-body">
-                            <p class="card-text"><b>SEKIRO SHADOW DIE TWICE</b> <br>Es un nuevo juego de acción y
-                                aventura en tercera persona con el inconfundible estilo del estudio detrás de Dark
-                                Souls, y unos elementos de Rol que resultan bastante familiares.
-                                <br>Te pondrá a los mandos de un guerrero de noble corazón, cuya misión es rescatar a su
-                                amo, un joven señor, al tiempo que busca la venganza sobre su archienemigo. En el papel
-                                de “Sekiro” o “el lobo de un solo brazo”, los jugadores descubrirán las distintas formas
-                                de enfrentarse en combate a los enemigos de forma estratégica.
-                            </p>
-                            <mat-expansion-panel hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        <span>Requisitos:</span>
-                                    </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <ul>
-                                    <li>{{ArrayObjRequisitos[3].sistema | json}}</li>
-                                    <li>{{ArrayObjRequisitos[3].procesador | json}}</li>
-                                    <li>{{ArrayObjRequisitos[3].memoria | json}}</li>
-                                    <li>{{ArrayObjRequisitos[3].graficos | json}}</li>
-                                    <li>{{ArrayObjRequisitos[3].directx | json}}</li>
-                                    <li>{{ArrayObjRequisitos[3].almacenamiento | json}}</li>
-                                </ul>
+                    <div class="card-body">
+                        <p class="card-text"><b>SEKIRO SHADOW DIE TWICE</b>
+                            <br>Te pondrá a los mandos de un guerrero de noble corazón, cuya misión es rescatar a su
+                            amo, un joven señor, al tiempo que busca la venganza sobre su archienemigo. En el papel
+                            de “Sekiro”, los jugadores descubrirán las distintas formas
+                            de enfrentarse en combate a los enemigos de forma estratégica.
+                        </p>
+                        <mat-expansion-panel hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span>Requisitos:</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>{{ArrayObjRequisitos[3].sistema | json}}</li>
+                                <li>{{ArrayObjRequisitos[3].procesador | json}}</li>
+                                <li>{{ArrayObjRequisitos[3].memoria | json}}</li>
+                                <li>{{ArrayObjRequisitos[3].graficos | json}}</li>
+                                <li>{{ArrayObjRequisitos[3].directx | json}}</li>
+                                <li>{{ArrayObjRequisitos[3].almacenamiento | json}}</li>
+                            </ul>
 
-                            </mat-expansion-panel>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                        Añadir al carrito </button>
-                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
-                                </div>
-                                <small class="text-muted">$59.99</small>
+                        </mat-expansion-panel>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
+                            <small class="text-muted">$59.99</small>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/03/Dark-Light-PC-Espanol.jpg?w=616&ssl=1"
-                            class="bd-placeholder-img card-img-top" width="100%" height="300"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/03/Dark-Light-PC-Espanol.jpg?w=616&ssl=1"
+                        class="bd-placeholder-img card-img-top" width="100%" height="300"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>ImagenJuego</title>
 
-                        <div class="card-body">
-                            <p class="card-text"><b>DARK LIGHT PC THE LOST</b> <br>Es un juego de plataformas y acción
-                                en 2D de ciencia ficción, metroidvania, inspirado en las almas. Explora el mundo
-                                apocalipsis cyberpunk lleno de seres sobrenaturales. Encuentra y derrota a las criaturas
-                                de la oscuridad que son invisibles a simple vista, detectadas solo con la fuente de luz
-                                de tu dron.</p>
-                            <mat-expansion-panel hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        <span>Requisitos:</span>
-                                    </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <ul>
-                                    <li>{{ArrayObjRequisitos[4].sistema | json}}</li>
-                                    <li>{{ArrayObjRequisitos[4].procesador | json}}</li>
-                                    <li>{{ArrayObjRequisitos[4].memoria | json}}</li>
-                                    <li>{{ArrayObjRequisitos[4].graficos | json}}</li>
-                                    <li>{{ArrayObjRequisitos[4].directx | json}}</li>
-                                    <li>{{ArrayObjRequisitos[4].almacenamiento | json}}</li>
-                                </ul>
+                    <div class="card-body">
+                        <p class="card-text"><b>DARK LIGHT PC THE LOST</b> <br>Es un juego de plataformas y acción
+                            en 2D de ciencia ficción, metroidvania, inspirado en las almas. Explora el mundo
+                            apocalipsis cyberpunk lleno de seres sobrenaturales. Encuentra y derrota a las criaturas
+                            de la oscuridad que son invisibles a simple vista, detectadas solo con la fuente de luz
+                            de tu dron.</p>
+                        <mat-expansion-panel hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span>Requisitos:</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>{{ArrayObjRequisitos[4].sistema | json}}</li>
+                                <li>{{ArrayObjRequisitos[4].procesador | json}}</li>
+                                <li>{{ArrayObjRequisitos[4].memoria | json}}</li>
+                                <li>{{ArrayObjRequisitos[4].graficos | json}}</li>
+                                <li>{{ArrayObjRequisitos[4].directx | json}}</li>
+                                <li>{{ArrayObjRequisitos[4].almacenamiento | json}}</li>
+                            </ul>
 
-                            </mat-expansion-panel>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                        Añadir al carrito </button>
-                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
-                                </div>
-                                <small class="text-muted">$16.99</small>
+                        </mat-expansion-panel>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
+                            <small class="text-muted">$16.99</small>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="col">
-                    <div class="card shadow-sm">
-                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/08/Cult-of-the-Lamb-Pivigames.jpg?w=670&ssl=1"
-                            class="bd-placeholder-img card-img-top" width="100%" height="300"
-                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                            preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+            <div class="col">
+                <div class="card shadow-sm">
+                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/08/Cult-of-the-Lamb-Pivigames.jpg?w=670&ssl=1"
+                        class="bd-placeholder-img card-img-top" width="100%" height="300"
+                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <title>ImagenJuego</title>
 
-                        <div class="card-body">
-                            <p class="card-text"><b>CULT OF THE LAMB</b> <br>Juego de aventura y acción con elementos de
-                                roguelike y estrategi donde tomamos el rol de un cordero (borreguito) poseído que es
-                                salvado de la muerte por un extraño ente y que ahora debe devolver el favor formando una
-                                comunidad que siga ciegamente su palabra.
-                                <br>
-                                El juego invita a los usuarios a crear su propia secta en una tierra de profetas,
-                                aventurándose en regiones diversas y misteriosas para construir una leal comunidad de
-                                adoradores de los bosques.
-                            </p>
-                            <mat-expansion-panel hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        <span>Requisitos:</span>
-                                    </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <ul>
-                                    <li>{{ArrayObjRequisitos[5].sistema | json}}</li>
-                                    <li>{{ArrayObjRequisitos[5].procesador | json}}</li>
-                                    <li>{{ArrayObjRequisitos[5].memoria | json}}</li>
-                                    <li>{{ArrayObjRequisitos[5].graficos | json}}</li>
-                                    <li>{{ArrayObjRequisitos[5].directx | json}}</li>
-                                    <li>{{ArrayObjRequisitos[5].almacenamiento | json}}</li>
-                                </ul>
+                    <div class="card-body">
+                        <p class="card-text"><b>CULT OF THE LAMB</b> <br>Juego de aventura y acción con elementos de
+                            roguelike y estrategi donde tomamos el rol de un cordero (borreguito) poseído que es
+                            salvado de la muerte por un extraño ente y que ahora debe devolver el favor formando una
+                            comunidad que siga ciegamente su palabra.<br> <br>
+                        </p>
+                        <mat-expansion-panel hideToggle>
+                            <mat-expansion-panel-header>
+                                <mat-panel-title>
+                                    <span>Requisitos:</span>
+                                </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <ul>
+                                <li>{{ArrayObjRequisitos[5].sistema | json}}</li>
+                                <li>{{ArrayObjRequisitos[5].procesador | json}}</li>
+                                <li>{{ArrayObjRequisitos[5].memoria | json}}</li>
+                                <li>{{ArrayObjRequisitos[5].graficos | json}}</li>
+                                <li>{{ArrayObjRequisitos[5].directx | json}}</li>
+                                <li>{{ArrayObjRequisitos[5].almacenamiento | json}}</li>
+                            </ul>
 
-                            </mat-expansion-panel>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
-                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                        Añadir al carrito </button>
-                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
-                                </div>
-                                <small class="text-muted">$49.99</small>
+                        </mat-expansion-panel>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
+                            <small class="text-muted">$49.99</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
+</div>
