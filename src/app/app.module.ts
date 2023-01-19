@@ -18,16 +18,19 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatCardModule} from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatStepperModule} from '@angular/material/stepper';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 
 
 
 //Componentes
-import { HeaderComponent } from './Componentes/header/header.component';
+import { HeaderComponent } from './Componentes/navegacion/header/header.component';
 import { OfertasComponent } from './Componentes/ofertasComp/ofertas/ofertas.component';
 import { DescuentosComponent } from './Componentes/ofertasComp/descuentos/descuentos.component';
 import { ColeccionesComponent } from './Componentes/ofertasComp/colecciones/colecciones.component';
 import { CompraComponent } from './Componentes/compra/compra.component';
+import { FooterComponent } from './Componentes/navegacion/footer/footer.component';
 
 
 @NgModule({
@@ -38,6 +41,7 @@ import { CompraComponent } from './Componentes/compra/compra.component';
     DescuentosComponent,
     ColeccionesComponent,
     CompraComponent,
+    FooterComponent,
     
   ],
   imports: [
@@ -55,7 +59,10 @@ import { CompraComponent } from './Componentes/compra/compra.component';
     MatTooltipModule,
     MatDialogModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatStepperModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
