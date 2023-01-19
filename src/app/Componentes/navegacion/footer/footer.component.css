@@ -10,6 +10,9 @@ button{
     padding: 1rem;
     background-color: #2a475e;
 }
+button:hover{
+    background-color: #c7d5e0;
+}
 .container{
     display: flex;
 }
