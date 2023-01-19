@@ -1,0 +1,17 @@
+.container{
+  display: flex;
+  flex: row;
+  margin: 2rem;
+}
+#image{
+  margin: 1rem;
+  width: 20rem;
+  height: 10rem;
+}
+.card-body{
+  display: inline-block;
+  padding: 1rem;
+}
+.boton{
+  padding: 2rem;
+}

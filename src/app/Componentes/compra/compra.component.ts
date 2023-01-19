@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import {FormBuilder, Validators} from '@angular/forms';
 
 import { Juegos } from 'src/app/interface/juegos';
 @Component({
@@ -13,7 +14,6 @@ export class CompraComponent implements OnInit {
     
   }
    
-  
 
   ngOnInit(): void {
       

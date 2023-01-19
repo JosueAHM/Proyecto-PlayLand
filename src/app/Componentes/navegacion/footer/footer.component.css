@@ -1,0 +1,18 @@
+footer{
+    background-color: #171a21 ;
+    color: #aaaaaa;    
+}
+h1{
+    padding: 1rem;
+}
+button{
+    margin: 1rem;
+    padding: 1rem;
+    background-color: #2a475e;
+}
+.container{
+    display: flex;
+}
+.row{
+    margin: 0.5rem    ;
+}

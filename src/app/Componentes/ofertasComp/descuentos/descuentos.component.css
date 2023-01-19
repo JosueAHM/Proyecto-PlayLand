@@ -42,6 +42,7 @@ button{
     background-color: #c7d5e0;
     color: #2a475e;
 }
-descr{
+.descr{
     background-color: #2a475e !important;
+    color: #c7d5e0 !important;
 }
