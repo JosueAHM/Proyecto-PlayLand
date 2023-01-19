@@ -9,8 +9,10 @@ import { Juegos } from 'src/app/interface/juegos';
   styleUrls: ['./compra.component.css']
 })
 export class CompraComponent implements OnInit {
-  constructor(private router: Router, private dialogRef: MatDialogRef<CompraComponent>, @ Inject(MAT_DIALOG_DATA) public data: Juegos) { }
-  
+  constructor(private router: Router, private dialogRef: MatDialogRef<CompraComponent>, @ Inject(MAT_DIALOG_DATA) public data: Juegos) { 
+    
+  }
+   
   
 
   ngOnInit(): void {

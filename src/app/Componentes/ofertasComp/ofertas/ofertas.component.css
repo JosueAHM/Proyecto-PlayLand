@@ -1,11 +1,15 @@
-mat-toolbar {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
+mat-tab-group{
+    background-color: #1b2838 !important;
+}
+mat-tab{
+    background-color: aliceblue !important;
+    color: #c7d5e0 !important; 
 }
 .Subtitulo {
     display: flex;
     justify-content: center;
     font-size: x-large;
-    margin: 1rem;
+    background-color: #1b2838;
+    color: #c7d5e0;
+    padding: 1.5rem;
 }
