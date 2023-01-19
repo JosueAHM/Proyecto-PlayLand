@@ -6,19 +6,17 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 //Angular Material
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatTabsModule} from '@angular/material/tabs';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatListModule} from '@angular/material/list';
-import {MatExpansionModule} from '@angular/material/expansion';
-import {MatTooltipModule} from '@angular/material/tooltip';
-import {MatDialogModule} from '@angular/material/dialog';
-import {MatCardModule} from '@angular/material/card';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatCardModule } from '@angular/material/card';
 
 
 
@@ -28,7 +26,9 @@ import { OfertasComponent } from './Componentes/ofertasComp/ofertas/ofertas.comp
 import { DescuentosComponent } from './Componentes/ofertasComp/descuentos/descuentos.component';
 import { ColeccionesComponent } from './Componentes/ofertasComp/colecciones/colecciones.component';
 import { CompraComponent } from './Componentes/compra/compra.component';
-
+import { RequisitosAltosComponent } from './Componentes/requisitos-altos/requisitos-altos.component';
+import { RequisitosMediosComponent } from './Componentes/requisitos-medios/requisitos-medios.component';
+import { RequisitosBajosComponent } from './Componentes/requisitos-bajos/requisitos-bajos.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,10 @@ import { CompraComponent } from './Componentes/compra/compra.component';
     DescuentosComponent,
     ColeccionesComponent,
     CompraComponent,
-    
+    RequisitosAltosComponent,
+    RequisitosMediosComponent,
+    RequisitosBajosComponent
+
   ],
   imports: [
     BrowserModule,
@@ -56,6 +59,7 @@ import { CompraComponent } from './Componentes/compra/compra.component';
     MatDialogModule,
     MatCardModule,
     MatFormFieldModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

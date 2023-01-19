@@ -1,0 +1,306 @@
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+    <div class="Titulo">
+        <h1 class="subtitulo">Requisitos Bajos</h1>
+    </div>
+    <mat-divider></mat-divider>
+
+    <div class="ContenedorPrincipal">
+        <div class="container">
+            <label class="nota">
+                <p>Bienvenidos a la sección de juegos para PC de pocos requisitos, estos juegos
+                    son aquellos
+                    cuyas características los hacen bastante ligeros tanto en peso como en consumo de PC, están por
+                    debajo de
+                    los 2gb de Ram, procesador des hasta 1.0ghz, y muchos no piden tarjeta gráfica, aún que la mayoría
+                    de ellos
+                    son de años anteriores también encontrarás alguno de estreno que cumple con estas características
+                    ;)</p>
+            </label>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2019/09/Northgard-Conquest-PC-Espa%C3%B1ol-Gratis.jpg?w=620&ssl=1"
+                            class="bd-placeholder-img card-img-top" width="100%" height="300"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Imagen Juego</title>
+                        <div class="card-body">
+                            <p class="card-text"><b>NORTHGARD CONQUEST</b> <br>Un título que une género y temática en un
+                                videojuego donde un grupo de aventureros han descubierto un nuevo mundo de peligros y
+                                misterios. Con amplias mecánicas de exploración, gestión de recursos y comercio, se debe
+                                ayudar a un pueblo a prosperar y sobrevivir en esta tierra hostil haciendo frente a
+                                criaturas tan imponentes como lobos gigantes o ejércitos de muertos vivientes. ¿Lograrás
+                                alcanzar la grandeza?</p>
+
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span>Requisitos:</span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <ul>
+                                    <li>{{ArrayObjRequisitos[0].sistema | json}}</li>
+                                    <li>{{ArrayObjRequisitos[0].procesador | json}}</li>
+                                    <li>{{ArrayObjRequisitos[0].memoria | json}}</li>
+                                    <li>{{ArrayObjRequisitos[0].graficos | json}}</li>
+                                    <li>{{ArrayObjRequisitos[0].directx | json}}</li>
+                                    <li>{{ArrayObjRequisitos[0].almacenamiento | json}}</li>
+                                </ul>
+
+                            </mat-expansion-panel>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                        Añadir al carrito </button>
+                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>
+                                        Comprar </button>
+                                </div>
+                                <small class="text-muted">$29.99</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2021/02/Stranded-Deep-Juego-PiviGames.jpg?w=620&ssl=1"
+                            class="bd-placeholder-img card-img-top" width="100%" height="300"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>ImagenJuego</title>
+
+                        <div class="card-body">
+                            <p class="card-text"><b>STRANDED DEEP</b> <br>
+                                Cuando acabe la introducción de la partida habrás naufragado en una minúscula isla
+                                desierta: tu nuevo hogar. “Esto es como The Forest pero en el mar”, quizás estés
+                                pensando. Te equivocas. Mientras que otros juegos similares te invitan a craftear (crear
+                                objetos combinando materiales) en una pantalla separada del juego, en Stranded Deep la
+                                creación transcurre durante la misma partida. ¿Quieres crear una lanza? Deberás reunir
+                                palos, roca y cuerda y agacharte en la orilla para crear tu nueva herramienta de pesca.
+                            </p>
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span>Requisitos:</span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <ul>
+                                    <li>{{ArrayObjRequisitos[1].sistema | json}}</li>
+                                    <li>{{ArrayObjRequisitos[1].procesador | json}}</li>
+                                    <li>{{ArrayObjRequisitos[1].memoria | json}}</li>
+                                    <li>{{ArrayObjRequisitos[1].graficos | json}}</li>
+                                    <li>{{ArrayObjRequisitos[1].directx | json}}</li>
+                                    <li>{{ArrayObjRequisitos[1].almacenamiento | json}}</li>
+                                </ul>
+
+                            </mat-expansion-panel>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                        Añadir al carrito </button>
+                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>
+                                        Comprar </button>
+                                </div>
+                                <small class="text-muted">$19.99</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/10/Rimworld-Biotech-Pivigames.jpg?w=616&ssl=1"
+                            class="bd-placeholder-img card-img-top" width="100%" height="300"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>ImagenJuego</title>
+
+                        <div class="card-body">
+                            <p class="card-text"><b>RIMWORLD</b> <br>Un videojuego de construcción y gestión en
+                                desarrollo por Ludeon Studios.El juego pone al jugador en el papel de gestor de una
+                                nueva colonia en un planeta del borde galáctico, donde los colonos deben sobrevivir a
+                                diversos eventos generados aleatoriamente por la inteligencia artificial «cuenta
+                                cuentos».<br>
+                                Para asegurar la supervivencia de la colonia, el jugador deberá manejar y equilibrar las
+                                diversas condiciones que garantizan el bienestar físico y mental de sus colonos,
+                                asegurándose de que estén bien alimentados, tengan unos aposentos cómodos, ropa adecuada
+                                para el clima….</p>
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span>Requisitos:</span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <ul>
+                                    <li>{{ArrayObjRequisitos[2].sistema | json}}</li>
+                                    <li>{{ArrayObjRequisitos[2].procesador | json}}</li>
+                                    <li>{{ArrayObjRequisitos[2].memoria | json}}</li>
+                                    <li>{{ArrayObjRequisitos[2].graficos | json}}</li>
+                                    <li>{{ArrayObjRequisitos[2].directx | json}}</li>
+                                    <li>{{ArrayObjRequisitos[2].almacenamiento | json}}</li>
+                                </ul>
+
+                            </mat-expansion-panel>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                        Añadir al carrito </button>
+                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>
+                                        Comprar </button>
+                                </div>
+                                <small class="text-muted">$34.99</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/04/europa-universalis-iv-lions-of-the-north-pc-game-pivigames.jpg?w=616&ssl=1"
+                            class="bd-placeholder-img card-img-top" width="100%" height="300"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>ImagenJuego</title>
+
+                        <div class="card-body">
+                            <p class="card-text"><b>EUROPA UNIVERSALIS IV</b> <br>Un juego de estrategia, guerra y
+                                simulación ambientado principalmente en la era de los descubrimientos y la colonización
+                                del nuevo mundo. Comienza en el contexto histórico del final de la Guerra de los Cien
+                                Años y la caída del Imperio Bizantino y continúa a través de las revoluciones de las
+                                trece colonias y francesa, y concluye tras las Guerras Napoleónicas. Sin embargo,
+                                durante el desarrollo del juego, las decisiones del jugador alterarán radicalmente el
+                                curso de la historia, por lo que hacia el final del juego gran parte del mundo diferirá,
+                                en gran medida, de la realidad.
+                            </p>
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span>Requisitos:</span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <ul>
+                                    <li>{{ArrayObjRequisitos[3].sistema | json}}</li>
+                                    <li>{{ArrayObjRequisitos[3].procesador | json}}</li>
+                                    <li>{{ArrayObjRequisitos[3].memoria | json}}</li>
+                                    <li>{{ArrayObjRequisitos[3].graficos | json}}</li>
+                                    <li>{{ArrayObjRequisitos[3].directx | json}}</li>
+                                    <li>{{ArrayObjRequisitos[3].almacenamiento | json}}</li>
+                                </ul>
+
+                            </mat-expansion-panel>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                        Añadir al carrito </button>
+                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>
+                                        Comprar </button>
+                                </div>
+                                <small class="text-muted">$39.99</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/02/Hearts-of-Iron-IV-Blood-Alone-Pivigames.jpg?w=616&ssl=1"
+                            class="bd-placeholder-img card-img-top" width="100%" height="300"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>ImagenJuego</title>
+
+                        <div class="card-body">
+                            <p class="card-text"><b>HEARTS OF IRON IV</b> <br>Es la secuela del juego de Hearts of
+                                Iron
+                                III.
+                                Cubre el periodo comprendido entre 1936 y 1948, y se centra en los acontecimientos que
+                                condujeron a la Segunda Guerra Mundial y a la guerra en sí; un juego de estrategia y
+                                guerra
+                                por excelencia.</p>
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span>Requisitos:</span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <ul>
+                                    <li>{{ArrayObjRequisitos[4].sistema | json}}</li>
+                                    <li>{{ArrayObjRequisitos[4].procesador | json}}</li>
+                                    <li>{{ArrayObjRequisitos[4].memoria | json}}</li>
+                                    <li>{{ArrayObjRequisitos[4].graficos | json}}</li>
+                                    <li>{{ArrayObjRequisitos[4].directx | json}}</li>
+                                    <li>{{ArrayObjRequisitos[4].almacenamiento | json}}</li>
+                                </ul>
+
+                            </mat-expansion-panel>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                        Añadir al carrito </button>
+                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>
+                                        Comprar </button>
+                                </div>
+                                <small class="text-muted">$39.99</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2020/09/Stonehard-Way-Forward-PiviGames.jpg?w=650&ssl=1"
+                            class="bd-placeholder-img card-img-top" width="100%" height="300"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>ImagenJuego</title>
+
+                        <div class="card-body">
+                            <p class="card-text"><b>STONESHARD</b> <br>Un desafiante RPG de mundo abierto con elementos
+                                propios de las aventuras roguelike y los videojuegos de supervivencia. Inspirado en
+                                clásicos como Diablo, pero también en obras recientes como Darkest Dungeon y The Banner
+                                Saga, en esta aventura de rol nos embarcamos en un peligroso viaje a través de un mundo
+                                de fantasía repleto de monstruos.
+                            </p>
+                            <mat-expansion-panel hideToggle>
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span>Requisitos:</span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <ul>
+                                    <li>{{ArrayObjRequisitos[5].sistema | json}}</li>
+                                    <li>{{ArrayObjRequisitos[5].procesador | json}}</li>
+                                    <li>{{ArrayObjRequisitos[5].memoria | json}}</li>
+                                    <li>{{ArrayObjRequisitos[5].graficos | json}}</li>
+                                    <li>{{ArrayObjRequisitos[5].directx | json}}</li>
+                                    <li>{{ArrayObjRequisitos[5].almacenamiento | json}}</li>
+                                </ul>
+
+                            </mat-expansion-panel>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
+                                        Añadir al carrito </button>
+                                    <button mat-button class="boton"><mat-icon>shop</mat-icon>
+                                        Comprar </button>
+                                </div>
+                                <small class="text-muted">$24.99</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
