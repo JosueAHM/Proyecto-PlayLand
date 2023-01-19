@@ -20,7 +20,6 @@ import { MatCardModule } from '@angular/material/card';
 
 
 
-
 //Componentes
 import { HeaderComponent } from './Componentes/header/header.component';
 import { OfertasComponent } from './Componentes/ofertasComp/ofertas/ofertas.component';
@@ -42,6 +41,7 @@ import { RequisitosBajosComponent } from './Componentes/requisitos-bajos/requisi
     RequisitosAltosComponent,
     RequisitosMediosComponent,
     RequisitosBajosComponent
+
   ],
   imports: [
     BrowserModule,
@@ -57,7 +57,8 @@ import { RequisitosBajosComponent } from './Componentes/requisitos-bajos/requisi
     MatExpansionModule,
     MatTooltipModule,
     MatDialogModule,
-    MatCardModule
+    MatCardModule,
+    MatFormFieldModule
 
   ],
   providers: [],
