@@ -1,0 +1,51 @@
+.Titulo {
+    background-color: #1b2838;
+    color: white;
+    height: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1%;
+}
+
+.subtitulo {
+    font-size: 35px;
+}
+
+.nota {
+    font-size: 19px;
+    background-color: #2a475e;
+    color: white;
+    justify-content: center;
+    padding: 5%;
+}
+
+button {
+    margin: 1rem;
+    padding: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.ContenedorPrincipal {
+    background-color: #2a475e;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+.container {
+    background-color: #2a475e;
+}
+
+.card-body {
+    background-color: #1b2838;
+    color: white;
+}
+
+.boton {
+    color: white;
+    background-color: #2a475e;
+}
+
+.boton:hover {
+    background-color: #5290c4;
+}

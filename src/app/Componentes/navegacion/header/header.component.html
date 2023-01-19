@@ -1,18 +1,19 @@
 <div>
-  <mat-toolbar id="Tootlbar" color="primary"> 
-      <span id="playland" routerLink="./"><mat-icon>games</mat-icon> PlayLand</span>
-      <span class="example-spacer"></span>
-      <button mat-button routerLink="#">Tienda</button>
-      <mat-menu #appMenu="matMenu" id="Menu">
-        <button class="Item" mat-menu-item >Requisitos Altos</button>
-        <button class="Item" mat-menu-item>Requisitos Medios</button>
-        <button class="Item" mat-menu-item>Requisitos Bajos</button>
-      </mat-menu>
-      <button mat-button [matMenuTriggerFor]="appMenu">Requisitos</button>
-      <button mat-button routerLink="./ofertas">Ofertas</button>
-      <span class="example-spacer"></span>
+  <mat-toolbar color="primary">
+    <span id="playland" routerLink="./"><mat-icon>games</mat-icon> PlayLand</span>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="#">Tienda</button>
+    <mat-menu #appMenu="matMenu">
+      <button mat-menu-item routerLink="./requisitosAltos"> <mat-icon>thumb_up</mat-icon> Requisitos Altos</button>
+      <button mat-menu-item routerLink="./requisitosMedios"> <mat-icon>thumbs_up_down</mat-icon> Requisitos
+        Medios</button>
+      <button mat-menu-item routerLink="./requisitosBajos"> <mat-icon>thumb_down</mat-icon> Requisitos Bajos</button>
+    </mat-menu>
+    <button mat-button [matMenuTriggerFor]="appMenu">Requisitos</button>
+    <button mat-button routerLink="./ofertas">Ofertas</button>
+    <span class="example-spacer"></span>
 
-      <mat-icon id="carrito" matTooltip="Ver tus compras en el carrito">shopping_cart</mat-icon>
+    <mat-icon id="carrito" matTooltip="Ver tus compras en el carrito">shopping_cart</mat-icon>
 
   </mat-toolbar>
 </div>
