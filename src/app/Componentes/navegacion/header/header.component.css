@@ -23,9 +23,8 @@ mat-toolbar {
   padding-top: 1rem;
   border-radius: 50%;
 }
-
 #carrito:hover {
-  background-color: #3849a7;
+  background-color: #1b2838;
   margin: 1rem;
 }
 
@@ -33,4 +32,7 @@ button {
   margin-right: 2rem;
   margin-left: 2rem;
   padding: 2rem;
+}
+.boton:hover{
+  background-color: #1b2838;
 }

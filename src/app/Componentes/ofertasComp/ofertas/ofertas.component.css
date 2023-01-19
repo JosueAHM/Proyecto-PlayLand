@@ -1,11 +1,16 @@
-mat-toolbar {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0;
-}
+
+::ng-deep .ofertas {
+    background-color: #1b2838;
+    color: #c7d5e0;
+  }
+  ::ng-deep .ofertas1{
+    color: #c7d5e0;
+  }
 .Subtitulo {
     display: flex;
     justify-content: center;
     font-size: x-large;
-    margin: 1rem;
+    background-color: #1b2938;
+    color: #c7d5e0;
+    padding: 1.5rem;
 }

@@ -1,0 +1,27 @@
+.container{
+  display: flex;
+  flex: row;
+  padding: 1rem;
+  background-color:  #1b2838;
+  color: #c7d5e0;
+}
+#image{
+  margin: 1rem;
+  width: 20rem;
+  height: 10rem;
+}
+.card-body{
+  display: inline-block;
+  padding: 1rem;
+}
+.botones-contenedor{
+  display: flex;
+  justify-content: center;
+}
+.boton{
+  padding: 2rem;
+  background-color: #66c0f4 ;
+}
+.boton:hover{
+  background-color: #c7d5e0;
+}

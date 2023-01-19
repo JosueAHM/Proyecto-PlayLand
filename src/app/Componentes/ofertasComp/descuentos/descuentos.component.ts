@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Juegos } from 'src/app/interface/juegos';
 import { MatDialog } from '@angular/material/dialog';
 import { CompraComponent } from '../../compra/compra.component';
+
 @Component({
   selector: 'app-descuentos',
   templateUrl: './descuentos.component.html',

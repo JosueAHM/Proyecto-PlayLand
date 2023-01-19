@@ -3,12 +3,19 @@
     display: flex;
     flex-direction: row;
 }
-
+.ContenedorPadre{
+    background-color: #2a475e;
+    padding: 1rem;
+}
+.card-body{
+    background-color: #1b2838;
+    color: #c7d5e0;
+}
 span{
-    font-weight: bolder;
+    font-weight: 400;
     display: block;
 }
-#desc{
+.desc{
     display: flex;
     font-weight: 100;
     justify-content: center;
@@ -17,7 +24,7 @@ span{
     padding: 0.5rem;
     border: 1px solid #37df61;
 }
-#desc:hover{
+.desc:hover{
     background-color: white;
     color: #37df61;
     border: 1px solid #37df61;
@@ -26,4 +33,16 @@ button{
     margin: 1rem;
     padding: 0.5rem;
     padding-top: 0.5rem;
+}
+.boton{
+    background-color: #2a475e;
+    color: #c7d5e0;
+}
+.boton:hover{
+    background-color: #c7d5e0;
+    color: #2a475e;
+}
+.descr{
+    background-color: #2a475e !important;
+    color: #c7d5e0 !important;
 }

@@ -2,22 +2,32 @@
     display: flex;
     flex-direction: row;
 }
-
+.ContenedorPadre{
+    background-color: #2a475e;
+    padding: 1rem;
+}
 span{
-    font-weight: bolder;
+    font-weight: 400;
     display: block;
 }
-#desc{
+.card-body{
+    background-color: #1b2838;
+    color: #c7d5e0;
+}
+.desc{
     display: flex;
-    font-weight: 100;
+    border-radius: 20px;
+    border: #171a21;
+    font-weight: 400;
     justify-content: center;
     background-color: #37df61;
-    color: white;
+    color: #1b2838;
+    opacity: 1;
     padding: 0.5rem;
     border: 1px solid #37df61;
 }
-#desc:hover{
-    background-color: white;
+.desc:hover{
+    background-color: #1b2838;
     color: #37df61;
     border: 1px solid #37df61;
 }
@@ -25,4 +35,16 @@ button{
     margin: 1rem;
     padding: 0.5rem;
     padding-top: 0.5rem;
+}
+.boton{
+    background-color: #2a475e;
+    color: #c7d5e0;
+}
+.boton:hover{
+    background-color: #c7d5e0;
+    color: #2a475e;
+}
+.descr{
+    background-color: #2a475e !important;
+    color: #c7d5e0 !important;
 }

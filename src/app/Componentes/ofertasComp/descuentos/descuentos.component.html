@@ -7,7 +7,7 @@
 integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
 crossorigin="anonymous"></script>
 
-<div class="album py-5 bg-light">
+<div class="ContenedorPadre">
     <div class="container">
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -20,13 +20,13 @@ crossorigin="anonymous"></script>
 
                     <div class="card-body">
                         <span>{{ArrayObjJuegos[0].nombre | json}} </span>
-                        <span>Descuento:</span> <span id="desc">{{ArrayObjJuegos[0].descuento | json}}</span>
+                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[0].descuento | json}}</span>
                         <span class="card-text">Precio:</span> ${{ArrayObjJuegos[0].precio | json}}
 
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <span>Descripcion:</span>
+                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
                             </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjJuegos[0].descripcion | json}}</p>
@@ -34,8 +34,8 @@ crossorigin="anonymous"></script>
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="btn btn-sm btn-outline-secondary" ><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="btn btn-sm btn-outline-secondary" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton" ><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
+                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -50,13 +50,13 @@ crossorigin="anonymous"></script>
 
                     <div class="card-body">
                         <span>{{ArrayObjJuegos[1].nombre | json}} </span>
-                        <span>Descuento:</span> <span id="desc">{{ArrayObjJuegos[1].descuento | json}}</span>
+                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[1].descuento | json}}</span>
                         <span class="card-text">Precio:</span> ${{ArrayObjJuegos[1].precio | json}}
 
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <span>Descripcion:</span>
+                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
                             </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjJuegos[1].descripcion | json}}</p>
@@ -64,8 +64,8 @@ crossorigin="anonymous"></script>
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
+                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -80,13 +80,13 @@ crossorigin="anonymous"></script>
 
                     <div class="card-body">
                         <span>{{ArrayObjJuegos[2].nombre | json}} </span>
-                        <span>Descuento:</span> <span id="desc">{{ArrayObjJuegos[2].descuento | json}}</span>
+                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[2].descuento | json}}</span>
                         <span class="card-text">Precio:</span> ${{ArrayObjJuegos[2].precio | json}}
 
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <span>Descripcion:</span>
+                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
                             </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjJuegos[2].descripcion | json}}</p>
@@ -94,8 +94,8 @@ crossorigin="anonymous"></script>
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
+                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -110,13 +110,13 @@ crossorigin="anonymous"></script>
 
                     <div class="card-body">
                         <span>{{ArrayObjJuegos[3].nombre | json}} </span>
-                        <span>Descuento:</span> <span id="desc">{{ArrayObjJuegos[3].descuento | json}}</span>
+                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[3].descuento | json}}</span>
                         <span class="card-text">Precio:</span> ${{ArrayObjJuegos[3].precio | json}}
 
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <span>Descripcion:</span>
+                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
                             </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjJuegos[3].descripcion | json}}</p>
@@ -124,8 +124,8 @@ crossorigin="anonymous"></script>
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
+                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -140,13 +140,13 @@ crossorigin="anonymous"></script>
 
                     <div class="card-body">
                         <span>{{ArrayObjJuegos[4].nombre | json}} </span>
-                        <span>Descuento:</span> <span id="desc">{{ArrayObjJuegos[4].descuento | json}}</span>
+                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[4].descuento | json}}</span>
                         <span class="card-text">Precio:</span> ${{ArrayObjJuegos[4].precio | json}}
 
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <span>Descripcion:</span>
+                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
                             </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjJuegos[4].descripcion | json}}</p>
@@ -154,8 +154,8 @@ crossorigin="anonymous"></script>
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
+                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -170,13 +170,13 @@ crossorigin="anonymous"></script>
 
                     <div class="card-body">
                         <span>{{ArrayObjJuegos[5].nombre | json}} </span>
-                        <span>Descuento:</span> <span id="desc">{{ArrayObjJuegos[5].descuento | json}}</span>
+                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[5].descuento | json}}</span>
                         <span class="card-text">Precio:</span> ${{ArrayObjJuegos[5].precio | json}}
 
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <span>Descripcion:</span>
+                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
                             </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjJuegos[5].descripcion | json}}</p>
@@ -184,8 +184,8 @@ crossorigin="anonymous"></script>
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
+                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -200,13 +200,13 @@ crossorigin="anonymous"></script>
 
                     <div class="card-body">
                         <span>{{ArrayObjJuegos[6].nombre | json}} </span>
-                        <span>Descuento:</span> <span id="desc">{{ArrayObjJuegos[6].descuento | json}}</span>
+                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[6].descuento | json}}</span>
                         <span class="card-text">Precio:</span> ${{ArrayObjJuegos[6].precio | json}}
 
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <span>Descripcion:</span>
+                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
                             </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjJuegos[6].descripcion | json}}</p>
@@ -214,8 +214,8 @@ crossorigin="anonymous"></script>
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
+                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -230,13 +230,13 @@ crossorigin="anonymous"></script>
 
                     <div class="card-body">
                         <span>{{ArrayObjJuegos[7].nombre | json}} </span>
-                        <span>Descuento:</span> <span id="desc">{{ArrayObjJuegos[7].descuento | json}}</span>
+                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[7].descuento | json}}</span>
                         <span class="card-text">Precio:</span> ${{ArrayObjJuegos[7].precio | json}}
 
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <span>Descripcion:</span>
+                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
                             </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjJuegos[7].descripcion | json}}</p>
@@ -244,8 +244,8 @@ crossorigin="anonymous"></script>
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
+                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -260,13 +260,13 @@ crossorigin="anonymous"></script>
 
                     <div class="card-body">
                         <span>{{ArrayObjJuegos[8].nombre | json}} </span>
-                        <span>Descuento:</span> <span id="desc">{{ArrayObjJuegos[8].descuento | json}}</span>
+                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[8].descuento | json}}</span>
                         <span class="card-text">Precio:</span> ${{ArrayObjJuegos[8].precio | json}}
 
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
                             <mat-panel-title>
-                                <span>Descripcion:</span>
+                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
                             </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjJuegos[8].descripcion | json}}</p>
@@ -274,8 +274,8 @@ crossorigin="anonymous"></script>
                         
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="btn btn-sm btn-outline-secondary"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
+                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -284,4 +284,5 @@ crossorigin="anonymous"></script>
                 
         </div>
     </div>
+    
 </div>

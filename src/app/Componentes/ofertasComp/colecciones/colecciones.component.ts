@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Colecciones } from 'src/app/interface/juegos';
+import { CompraComponent } from '../../compra/compra.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-colecciones',
@@ -53,4 +55,12 @@ export class ColeccionesComponent {
       precio: 7.90
     },
   ]
+
+  constructor(private dialog:MatDialog){
+    
+  }
+  
+  openDialogSesion(){
+    this.dialog.open(CompraComponent)
+  }
 }
