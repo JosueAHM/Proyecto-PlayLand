@@ -89,8 +89,10 @@ export class DescuentosComponent {
   constructor(private dialog:MatDialog){
 
   }
+  Color:boolean=true;
 
   openDialogSesion(){
     this.dialog.open(CompraComponent)
+
   }
 }

@@ -8,6 +8,12 @@ import { RequisitosMediosComponent } from './Componentes/requisitos-medios/requi
 import { RequisitosBajosComponent } from './Componentes/requisitos-bajos/requisitos-bajos.component';
 import { PaginaPrincipalComponent } from './Componentes/pagina-principal/pagina-principal.component';
 import { HeaderComponent } from './Componentes/navegacion/header/header.component';
+import { LoginComponent } from './Componentes/loginComponentes/login/login.component';
+import { PagUltimosLanzamientosComponent } from './Componentes/paginasJuegosComponentes/pag-ultimos-lanzamientos/pag-ultimos-lanzamientos.component';
+import { PagProximosLanzamientosComponent } from './Componentes/paginasJuegosComponentes/pag-proximos-lanzamientos/pag-proximos-lanzamientos.component';
+import { PagJuegosDisponiblesComponent } from './Componentes/paginasJuegosComponentes/pag-juegos-disponibles/pag-juegos-disponibles.component';
+import { PagRegistroUsuarioComponent } from './Componentes/loginComponentes/pag-registro-usuario/pag-registro-usuario.component';
+import { PagPrincipalTiendaComponent } from './Componentes/paginasJuegosComponentes/pag-principal-tienda/pag-principal-tienda.component';
 
 const routes: Routes = [
   { path: '', component: PaginaPrincipalComponent },
@@ -22,6 +28,13 @@ const routes: Routes = [
   { path: 'requisitosMedios', component: RequisitosMediosComponent },
   { path: 'requisitosBajos', component: RequisitosBajosComponent },
 
+  { path: 'paginaLogin', component: LoginComponent },
+  { path: 'paginaUltimosLanzamientos', component: PagUltimosLanzamientosComponent},
+  { path: 'paginaProximosLanzamientos', component: PagProximosLanzamientosComponent},
+  { path: 'paginaJuegosDisponibles', component: PagJuegosDisponiblesComponent},
+  { path: 'paginaRegistroUsuario', component: PagRegistroUsuarioComponent},
+  { path: 'paginaPrincipalTienda', component: PagPrincipalTiendaComponent},
+  { path: '**', redirectTo: 'paginaPrincipal'},
 
 ];
 

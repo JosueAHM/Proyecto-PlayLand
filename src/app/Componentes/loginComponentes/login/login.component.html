@@ -1,0 +1,57 @@
+<div class="contenedor-p">
+  <div class="contenedor-login">
+    <h4 class="text-login">LOGIN</h4>
+    <form [formGroup]="loginForm" novalidate class="d-flex-center">
+      <div class="containerInp">
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Email" formControlName="email" />
+            <mat-error *ngIf="
+                !loginForm.get('email')?.errors?.required &&
+                loginForm.get('email')?.errors?.pattern
+              ">
+              Porfavor ingrese un correo VALIDO
+            </mat-error>
+            <mat-error *ngIf="
+                loginForm.get('email')?.invalid &&
+                (loginForm.get('email')?.dirty ||
+                  loginForm.get('email')?.touched) &&
+                loginForm.get('email')?.errors?.required
+              ">
+              Correo requerido
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mt-top-2">
+          <mat-form-field>
+            <input matInput type="password" placeholder="Contraseña" formControlName="password" />
+            <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
+              La longitud de la contraseña debe ser mayor o igual a 8 y la
+              contraseña debe contener uno o más caracteres en mayúsculas,
+              minúsculas, numéricos y especiales
+            </mat-error>
+            <mat-error *ngIf="
+                loginForm.get('password')?.invalid &&
+                (loginForm.get('password')?.dirty ||
+                  loginForm.get('password')?.touched) &&
+                loginForm.get('password')?.errors?.required
+              ">
+              Contraseña requerida
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="mt-top">
+          <button [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button type="submit"
+            (click)="loginCliente()">
+            Iniciar Sesión
+          </button>
+        </div>
+
+        <div class="noCuenta">
+          <b class="msgNoCuenta">No tienes una cuenta?</b>
+          <a class="enlacePagRegistro" (click)="irPaginaRegistro()">Registrate</a>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
