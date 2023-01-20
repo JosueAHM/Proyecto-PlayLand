@@ -1,26 +1,27 @@
+<div class="contenedor-p">
+  <mat-tab-group mat-align-tabs="center">
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">check_circle</mat-icon>
+        Juegos Disponibles
+      </ng-template>
+      <app-pag-juegos-disponibles></app-pag-juegos-disponibles>
+    </mat-tab>
 
-<mat-tab-group mat-align-tabs="center">
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">check_circle</mat-icon>
-      Juegos Disponibles
-    </ng-template>
-    <app-pag-juegos-disponibles></app-pag-juegos-disponibles>
-  </mat-tab>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">whatshot</mat-icon>
+        Ultimos Lanzamientos
+      </ng-template>
+      <app-pag-ultimos-lanzamientos></app-pag-ultimos-lanzamientos>
+    </mat-tab>
 
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">whatshot</mat-icon>
-      Ultimos Lanzamientos
-    </ng-template>
-    <app-pag-ultimos-lanzamientos></app-pag-ultimos-lanzamientos>
-  </mat-tab>
-
-  <mat-tab>
-    <ng-template mat-tab-label>
-      <mat-icon class="example-tab-icon">new_releases</mat-icon>
-      Proximos Lanzamientos
-    </ng-template>
-    <app-pag-proximos-lanzamientos></app-pag-proximos-lanzamientos>
-  </mat-tab>
-</mat-tab-group>
+    <mat-tab>
+      <ng-template mat-tab-label>
+        <mat-icon class="example-tab-icon">new_releases</mat-icon>
+        Proximos Lanzamientos
+      </ng-template>
+      <app-pag-proximos-lanzamientos></app-pag-proximos-lanzamientos>
+    </mat-tab>
+  </mat-tab-group>
+</div>

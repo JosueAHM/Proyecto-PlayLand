@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { JuegosProximosLanzamientos } from 'src/app/interface/juegos';
+import { JuegosService } from 'src/app/services/juegos.service';
+import { CompraComponent } from '../../compra/compra.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-pag-proximos-lanzamientos',
@@ -8,17 +11,17 @@ import { JuegosProximosLanzamientos } from 'src/app/interface/juegos';
 })
 export class PagProximosLanzamientosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _serviceJuego: JuegosService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
 
-  ArrayColecciones: string [] = ['nombre','descripcion','precio','fecha'];
+  ArrayColecciones: string[] = ['nombre', 'descripcion', 'precio', 'fecha'];
 
   ArrayObjColecciones: JuegosProximosLanzamientos[] = [
     {
       id: 1,
-      src:'https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Dark_Souls_Cover_Art.jpg/220px-Dark_Souls_Cover_Art.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Dark_Souls_Cover_Art.jpg/220px-Dark_Souls_Cover_Art.jpg',
       nombre: 'Fallout Clasic Colection',
       descripcion: 'Descubre dónde comenzó la legendaria serie de Fallout con los juegos que sacaron a los RPG de las mazmorras y los llevaron a Wasteland.',
       precio: 6.25,
@@ -66,4 +69,18 @@ export class PagProximosLanzamientosComponent implements OnInit {
       fecha: 'xx/xx/xxxx',
     },
   ]
+
+  agregarJuego(juego: any) {
+    console.log(juego, "agregaodo")
+    console.log("uwu")
+    this._serviceJuego.agregarCarrito(juego)
+    //this._serviceJuego.validarExiste(juego)
+
+  }
+
+  openDialogSesion() {
+    this.dialog.open(CompraComponent)
+
+  }
+
 }
