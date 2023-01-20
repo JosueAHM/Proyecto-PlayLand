@@ -15,9 +15,13 @@
     <button mat-button class="boton" routerLink="./ofertas">Ofertas</button>
     <span class="example-spacer"></span>
 
+    <mat-icon id="carrito" class="cart" matBadgeColor="warn" matTooltip="Ver tus compras en el carrito"
+      routerLink="./cart" matBadge="15">shopping_cart
+      <span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">0
+      </span>
+    </mat-icon>
     
     <button mat-button (click)="irLogin()"><mat-icon>account_circle</mat-icon>Iniciar Sesion</button>
-    <mat-icon id="carrito" matTooltip="Ver tus compras en el carrito">shopping_cart</mat-icon>
 
 
   </mat-toolbar>

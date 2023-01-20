@@ -6,6 +6,7 @@ import { CompraComponent } from './Componentes/compra/compra.component';
 import { RequisitosAltosComponent } from './Componentes/requisitos-altos/requisitos-altos.component';
 import { RequisitosMediosComponent } from './Componentes/requisitos-medios/requisitos-medios.component';
 import { RequisitosBajosComponent } from './Componentes/requisitos-bajos/requisitos-bajos.component';
+import { CartComponent } from './Componentes/cart/cart.component';
 import { PaginaPrincipalComponent } from './Componentes/pagina-principal/pagina-principal.component';
 import { HeaderComponent } from './Componentes/navegacion/header/header.component';
 import { LoginComponent } from './Componentes/loginComponentes/login/login.component';
@@ -21,6 +22,7 @@ const routes: Routes = [
 
   { path: 'ofertas', component: OfertasComponent },
   { path: 'compra', component: CompraComponent },
+  { path: 'cart', component: CartComponent },
   { path: 'header', component: HeaderComponent },
   
 

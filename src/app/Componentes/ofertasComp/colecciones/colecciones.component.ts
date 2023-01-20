@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Colecciones } from 'src/app/interface/juegos';
 import { CompraComponent } from '../../compra/compra.component';
 import { MatDialog } from '@angular/material/dialog';
+import { JuegosService } from 'src/app/services/juegos.service';
 
 @Component({
   selector: 'app-colecciones',
@@ -9,12 +10,12 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./colecciones.component.css']
 })
 export class ColeccionesComponent {
-  ArrayColecciones: string [] = ['nombre','descripcion','precio','descuento'];
+  ArrayColecciones: string[] = ['nombre', 'descripcion', 'precio', 'descuento'];
 
   ArrayObjColecciones: Colecciones[] = [
     {
       id: 1,
-      src:'https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Dark_Souls_Cover_Art.jpg/220px-Dark_Souls_Cover_Art.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Dark_Souls_Cover_Art.jpg/220px-Dark_Souls_Cover_Art.jpg',
       nombre: 'Fallout Clasic Colection',
       descripcion: 'Descubre dónde comenzó la legendaria serie de Fallout con los juegos que sacaron a los RPG de las mazmorras y los llevaron a Wasteland.',
       precio: 6.25,
@@ -56,11 +57,19 @@ export class ColeccionesComponent {
     },
   ]
 
-  constructor(private dialog:MatDialog){
-    
+  constructor(private dialog: MatDialog, private _serviceJuego: JuegosService) {
+
   }
-  
-  openDialogSesion(){
+
+  agregarJuego(juego: any) {
+    console.log(juego, "agregaodo")
+    console.log("uwu")
+    this._serviceJuego.agregarCarrito(juego)
+    //this._serviceJuego.validarExiste(juego)
+
+  }
+
+  openDialogSesion() {
     this.dialog.open(CompraComponent)
   }
 }

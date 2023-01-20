@@ -1,13 +1,13 @@
 
 <header>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 </header>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-crossorigin="anonymous"></script>
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
 
 <div class="ContenedorPadre">
     <div class="container">
@@ -15,19 +15,20 @@ crossorigin="anonymous"></script>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://cdn-ext.fanatical.com/production/product/1280x720/fd51a206-6b70-4f80-a37a-284dc5070978.jpg" class="bd-placeholder-img card-img-top" width="100%" height="250"
+                    <img src="https://cdn-ext.fanatical.com/production/product/1280x720/fd51a206-6b70-4f80-a37a-284dc5070978.jpg"
+                        class="bd-placeholder-img card-img-top" width="100%" height="250"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+                    <title>ImagenJuego</title>
 
                     <div class="card-body">
                         <span>{{ArrayObjColecciones[0].nombre | json}} </span>
 
                         <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                            </mat-panel-title>
+                                <mat-panel-title>
+                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
+                                </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjColecciones[0].descripcion | json}}</p>
                         </mat-expansion-panel>
@@ -36,8 +37,11 @@ crossorigin="anonymous"></script>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"
+                                    (click)="agregarJuego(ArrayObjColecciones[0])"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"
+                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -45,19 +49,20 @@ crossorigin="anonymous"></script>
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3xvPdyqFvcfNkrobbtsfjr/f9f2b1a119f058207d49899127c402f1/ACEC_mockup_DIGITAL_ES.jpg" class="bd-placeholder-img card-img-top" width="100%" height="250"
+                    <img src="https://staticctf.akamaized.net/J3yJr34U2pZ2Ieem48Dwy9uqj5PNUQTn/3xvPdyqFvcfNkrobbtsfjr/f9f2b1a119f058207d49899127c402f1/ACEC_mockup_DIGITAL_ES.jpg"
+                        class="bd-placeholder-img card-img-top" width="100%" height="250"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+                    <title>ImagenJuego</title>
 
                     <div class="card-body">
                         <span>{{ArrayObjColecciones[1].nombre | json}} </span>
 
                         <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                            </mat-panel-title>
+                                <mat-panel-title>
+                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
+                                </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjColecciones[1].descripcion | json}}</p>
                         </mat-expansion-panel>
@@ -66,8 +71,11 @@ crossorigin="anonymous"></script>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"
+                                    (click)="agregarJuego(ArrayObjColecciones[1])"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"
+                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -75,19 +83,20 @@ crossorigin="anonymous"></script>
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://www.konami.com/products_master/eu_publish/shhd/eu/en/images/77_shhd_gamemain.jpg" class="bd-placeholder-img card-img-top" width="100%" height="250"
+                    <img src="https://www.konami.com/products_master/eu_publish/shhd/eu/en/images/77_shhd_gamemain.jpg"
+                        class="bd-placeholder-img card-img-top" width="100%" height="250"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+                    <title>ImagenJuego</title>
 
                     <div class="card-body">
                         <span>{{ArrayObjColecciones[2].nombre | json}} </span>
 
                         <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                            </mat-panel-title>
+                                <mat-panel-title>
+                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
+                                </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjColecciones[2].descripcion | json}}</p>
                         </mat-expansion-panel>
@@ -96,8 +105,11 @@ crossorigin="anonymous"></script>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"
+                                    (click)="agregarJuego(ArrayObjColecciones[2])"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"
+                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -105,19 +117,20 @@ crossorigin="anonymous"></script>
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://www.somosxbox.com/wp-content/uploads/2021/11/492540bf02636390efd77a305399187b.jpg" class="bd-placeholder-img card-img-top" width="100%" height="250"
+                    <img src="https://www.somosxbox.com/wp-content/uploads/2021/11/492540bf02636390efd77a305399187b.jpg"
+                        class="bd-placeholder-img card-img-top" width="100%" height="250"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+                    <title>ImagenJuego</title>
 
                     <div class="card-body">
                         <span>{{ArrayObjColecciones[3].nombre | json}} </span>
 
                         <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                            </mat-panel-title>
+                                <mat-panel-title>
+                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
+                                </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjColecciones[3].descripcion | json}}</p>
                         </mat-expansion-panel>
@@ -126,8 +139,11 @@ crossorigin="anonymous"></script>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"
+                                    (click)="agregarJuego(ArrayObjColecciones[3])"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"
+                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -135,19 +151,20 @@ crossorigin="anonymous"></script>
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/gamerfocus.co/wp-content/uploads/2011/10/Metal-Gear-Solid-HD-Collection.jpg?resize=600%2C347&ssl=1" class="bd-placeholder-img card-img-top" width="100%" height="250"
+                    <img src="https://i0.wp.com/gamerfocus.co/wp-content/uploads/2011/10/Metal-Gear-Solid-HD-Collection.jpg?resize=600%2C347&ssl=1"
+                        class="bd-placeholder-img card-img-top" width="100%" height="250"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+                    <title>ImagenJuego</title>
 
                     <div class="card-body">
                         <span>{{ArrayObjColecciones[4].nombre | json}} </span>
 
                         <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                            </mat-panel-title>
+                                <mat-panel-title>
+                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
+                                </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjColecciones[4].descripcion | json}}</p>
                         </mat-expansion-panel>
@@ -156,8 +173,11 @@ crossorigin="anonymous"></script>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"
+                                    (click)="agregarJuego(ArrayObjColecciones[4])"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"
+                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -165,19 +185,20 @@ crossorigin="anonymous"></script>
             </div>
             <div class="col">
                 <div class="card shadow-sm">
-                    <img src="https://i.ytimg.com/vi/DJq_gDt2TyI/maxresdefault.jpg" class="bd-placeholder-img card-img-top" width="100%" height="250"
+                    <img src="https://i.ytimg.com/vi/DJq_gDt2TyI/maxresdefault.jpg"
+                        class="bd-placeholder-img card-img-top" width="100%" height="250"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
-                        <title>ImagenJuego</title>
+                    <title>ImagenJuego</title>
 
                     <div class="card-body">
                         <span>{{ArrayObjColecciones[5].nombre | json}} </span>
 
                         <mat-expansion-panel class="descr" hideToggle>
                             <mat-expansion-panel-header>
-                            <mat-panel-title>
-                                <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                            </mat-panel-title>
+                                <mat-panel-title>
+                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
+                                </mat-panel-title>
                             </mat-expansion-panel-header>
                             <p>{{ArrayObjColecciones[5].descripcion | json}}</p>
                         </mat-expansion-panel>
@@ -187,14 +208,17 @@ crossorigin="anonymous"></script>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon> Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
+                                <button mat-button class="boton"
+                                    (click)="agregarJuego(ArrayObjColecciones[5])"><mat-icon>add_shopping_cart</mat-icon>
+                                    Añadir al carrito </button>
+                                <button mat-button class="boton"
+                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                
+
         </div>
     </div>
 </div>
