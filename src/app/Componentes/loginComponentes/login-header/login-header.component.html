@@ -6,8 +6,7 @@
 
     <mat-menu #appMenu="matMenu">
       <button mat-menu-item routerLink="./requisitosAltos"> <mat-icon>thumb_up</mat-icon> Requisitos Altos</button>
-      <button mat-menu-item routerLink="./requisitosMedios"> <mat-icon>thumbs_up_down</mat-icon> Requisitos
-        Medios</button>
+      <button mat-menu-item routerLink="./requisitosMedios"> <mat-icon>thumbs_up_down</mat-icon> Requisitos Medios</button>
       <button mat-menu-item routerLink="./requisitosBajos"> <mat-icon>thumb_down</mat-icon> Requisitos Bajos</button>
     </mat-menu>
     
@@ -15,13 +14,8 @@
     <button mat-button class="boton" routerLink="./ofertas">Ofertas</button>
     <span class="example-spacer"></span>
 
-    <mat-icon id="carrito" class="cart" matBadgeColor="warn" matTooltip="Ver tus compras en el carrito"
-      routerLink="./cart" matBadge="15">shopping_cart
-      <span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">0
-      </span>
-    </mat-icon>
     
-    <button mat-button (click)="irLogin()"><mat-icon>account_circle</mat-icon>Iniciar Sesion</button>
+    <mat-icon id="carrito" matTooltip="Ver tus compras en el carrito">shopping_cart</mat-icon>
 
 
   </mat-toolbar>

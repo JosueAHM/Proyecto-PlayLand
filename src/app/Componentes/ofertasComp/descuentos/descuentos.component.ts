@@ -90,6 +90,7 @@ export class DescuentosComponent {
   constructor(private dialog: MatDialog, private _serviceJuego: JuegosService) {
 
   }
+  Color:boolean=true;
 
   agregarJuego(juego: any) {
     console.log(juego, "agregaodo")
@@ -101,5 +102,6 @@ export class DescuentosComponent {
 
   openDialogSesion() {
     this.dialog.open(CompraComponent)
+
   }
 }

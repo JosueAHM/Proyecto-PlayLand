@@ -22,7 +22,8 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CartComponent } from './Componentes/cart/cart.component';
-
+import {MatInputModule} from '@angular/material/input';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 //Componentes
@@ -36,6 +37,15 @@ import { RequisitosMediosComponent } from './Componentes/requisitos-medios/requi
 import { RequisitosBajosComponent } from './Componentes/requisitos-bajos/requisitos-bajos.component';
 import { FooterComponent } from './Componentes/navegacion/footer/footer.component';
 
+import { PagProximosLanzamientosComponent } from './Componentes/paginasJuegosComponentes/pag-proximos-lanzamientos/pag-proximos-lanzamientos.component';
+import { PagJuegosDisponiblesComponent } from './Componentes/paginasJuegosComponentes/pag-juegos-disponibles/pag-juegos-disponibles.component';
+import { PagUltimosLanzamientosComponent } from './Componentes/paginasJuegosComponentes/pag-ultimos-lanzamientos/pag-ultimos-lanzamientos.component';
+import { PagRegistroUsuarioComponent } from './Componentes/loginComponentes/pag-registro-usuario/pag-registro-usuario.component';
+import { PagPrincipalTiendaComponent } from './Componentes/paginasJuegosComponentes/pag-principal-tienda/pag-principal-tienda.component';
+import { LoginHeaderComponent } from './Componentes/loginComponentes/login-header/login-header.component';
+import { LoginComponent } from './Componentes/loginComponentes/login/login.component';
+import { PaginaPrincipalComponent } from './Componentes/pagina-principal/pagina-principal.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,8 +58,15 @@ import { FooterComponent } from './Componentes/navegacion/footer/footer.componen
     FooterComponent,
     RequisitosAltosComponent,
     RequisitosMediosComponent,
-    RequisitosBajosComponent
-
+    RequisitosBajosComponent,
+    PagProximosLanzamientosComponent,
+    PagJuegosDisponiblesComponent,
+    PagUltimosLanzamientosComponent,
+    PagRegistroUsuarioComponent,
+    PagPrincipalTiendaComponent,
+    LoginHeaderComponent,
+    LoginComponent,
+    PaginaPrincipalComponent,
   ],
   imports: [
     BrowserModule,
@@ -71,8 +88,9 @@ import { FooterComponent } from './Componentes/navegacion/footer/footer.componen
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
-    CommonModule
-
+    CommonModule,
+    MatInputModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
