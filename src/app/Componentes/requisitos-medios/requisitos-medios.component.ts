@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Requisitos } from 'src/app/interface/juegos';
+import { CompraComponent } from '../compra/compra.component';
 
 
 @Component({
@@ -63,10 +65,11 @@ export class RequisitosMediosComponent {
   ]
 
 
+  constructor(private dialog: MatDialog) {
 
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
   }
 
+  openDialogSesion() {
+    this.dialog.open(CompraComponent)
+  }
 }

@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Requisitos } from 'src/app/interface/juegos';
+import { CompraComponent } from '../compra/compra.component';
 
 @Component({
   selector: 'app-requisitos-altos',
   templateUrl: './requisitos-altos.component.html',
   styleUrls: ['./requisitos-altos.component.css']
 })
-export class RequisitosAltosComponent implements OnInit {
+export class RequisitosAltosComponent {
 
   ArrayRequisitos: string[] = ['sistema', 'procesador', 'memoria', 'graficos', 'directx', 'almacenamiento'];
 
@@ -61,11 +63,12 @@ export class RequisitosAltosComponent implements OnInit {
     },
   ]
 
+  constructor(private dialog: MatDialog) {
 
+  }
 
-
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  openDialogSesion() {
+    this.dialog.open(CompraComponent)
   }
 
 }
