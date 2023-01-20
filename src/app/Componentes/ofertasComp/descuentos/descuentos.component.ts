@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Juegos } from 'src/app/interface/juegos';
 import { MatDialog } from '@angular/material/dialog';
 import { CompraComponent } from '../../compra/compra.component';
+import { JuegosService } from 'src/app/services/juegos.service';
 
 @Component({
   selector: 'app-descuentos',
@@ -9,12 +10,12 @@ import { CompraComponent } from '../../compra/compra.component';
   styleUrls: ['./descuentos.component.css']
 })
 export class DescuentosComponent {
-  ArrayJuegos: string [] = ['nombre','descripcion','precio','descuento'];
+  ArrayJuegos: string[] = ['nombre', 'descripcion', 'precio', 'descuento'];
 
   ArrayObjJuegos: Juegos[] = [
     {
       id: 1,
-      src:'https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Dark_Souls_Cover_Art.jpg/220px-Dark_Souls_Cover_Art.jpg',
+      src: 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Dark_Souls_Cover_Art.jpg/220px-Dark_Souls_Cover_Art.jpg',
       nombre: 'Dark Souls',
       descripcion: 'Dark Souls es una serie de juegos de rol de acción creados por Hidetaka Miyazaki de FromSoftware y publicados por Bandai Namco Entertainment. La serie comenzó con el lanzamiento de Dark Souls.',
       precio: 10.25,
@@ -86,11 +87,19 @@ export class DescuentosComponent {
     },
   ]
 
-  constructor(private dialog:MatDialog){
+  constructor(private dialog: MatDialog, private _serviceJuego: JuegosService) {
 
   }
 
-  openDialogSesion(){
+  agregarJuego(juego: any) {
+    console.log(juego, "agregaodo")
+    console.log("uwu")
+    this._serviceJuego.agregarCarrito(juego)
+    //this._serviceJuego.validarExiste(juego)
+
+  }
+
+  openDialogSesion() {
     this.dialog.open(CompraComponent)
   }
 }
