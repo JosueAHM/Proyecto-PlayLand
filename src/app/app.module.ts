@@ -46,7 +46,6 @@ import { FooterComponent } from './Componentes/navegacion/footer/footer.componen
     RequisitosAltosComponent,
     RequisitosMediosComponent,
     RequisitosBajosComponent
-
   ],
   imports: [
     BrowserModule,

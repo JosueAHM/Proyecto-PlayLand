@@ -1,0 +1,9 @@
+body{
+  display:-webkit-flex ;
+  height: fit-content ;
+  width: content ;
+}
+
+#carouselExampleIndicators{
+  width: 100%;
+}

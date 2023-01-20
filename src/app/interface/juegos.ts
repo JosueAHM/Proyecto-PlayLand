@@ -22,3 +22,32 @@ export interface Requisitos {
     directx: string;
     almacenamiento: string;
 }
+
+export interface JuegosProximosLanzamientos {
+    id: number;
+    src: string;
+    nombre: string;
+    descripcion: string;
+    precio: number;
+    fecha:string;
+  }
+  
+  export interface JuegosDisponibles {
+    id: number;
+    src: string;
+    nombre: string;
+    descripcion: string;
+    precio: number;
+  }
+  
+  export interface JuegosUltimosLanzamientos {
+    id: number;
+    src: string;
+    nombre: string;
+    descripcion: string;
+    precio: number;
+    fecha:string;
+  }
+  
+  
+  
