@@ -1,11 +1,11 @@
 export interface RequisitosModel {
-    id             : number;
-    sistema        : string,
-    procesador     : string,
-    memoria        : string,
-    graficos       : string,
-    directx        : string,
-    almacenamiento : string,
-    tipoRequisitos : string,
-    estado         : string
+    id             : number | null;
+    sistema        : string | null,
+    procesador     : string | null,
+    memoria        : string | null,
+    graficos       : string | null,
+    directx        : string | null,
+    almacenamiento : string | null,
+    tipoRequisitos : string | null,
+    estado         : string | null
 }
