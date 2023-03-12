@@ -24,263 +24,41 @@
                 antes de
                 Comprarlos.</h2>
         </label>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
+        <div class="grid">
+            <div class="sm:col-12 md:col-6 lg:col-4 xl:col-4" *ngFor="let juego of juegosDisponibles">
                 <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/02/Elden-Ring-Juego-PiviGames.jpg?w=616&ssl=1"
+                    <img src="{{juego.src}}"
                         class="bd-placeholder-img card-img-top" width="100%" height="300"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
                     <title>Imagen Juego</title>
 
                     <div class="card-body">
-                        <p class="card-text"><b>Elden Ring</b> <br>
-                            De los padres de Dark Souls llega este juego
-                            de mundo abierto insta a los jugadores a explorar un mapa grande y variado para
-                            descubrir
-                            todos los secretos que ocultan las Tierras Intermedias y descubrir cuál es el destino
-                            del misterioso Círculo de Elden.<br><br></p>
-                        <mat-expansion-panel hideToggle>
+                        <p class="card-text"><b>{{juego.nombre}}</b><br>
+                           {{juego.descripcion}}<br></p>
+                        <span class="text-white">Precio: {{juego.precio | currency}}</span>
+                        <mat-expansion-panel hideToggle class="mt-4">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     <span>Requisitos:</span>
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
                             <ul>
-                                <li>{{ArrayObjRequisitos[0].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[0].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[0].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[0].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[0].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[0].almacenamiento | json}}</li>
+                                <li>{{juego.requisitos.sistema}}</li>
+                                <li>{{juego.requisitos.procesador}}</li>
+                                <li>{{juego.requisitos.memoria}}</li>
+                                <li>{{juego.requisitos.graficos}}</li>
+                                <li>{{juego.requisitos.direct}}</li>
+                                <li>{{juego.requisitos.almacenamiento}}</li>
                             </ul>
 
                         </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>
-                                    Comprar </button>
+                        <div class="w-12 flex justify-content-center mt-4">
+                            <div class="w-max">
+                                <button class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-cart-plus"></li> Añadir al carrito </button>
+                                &nbsp;&nbsp;
+                                <button class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-wallet"></li> Comprar </button>
                             </div>
-                            <small class=" text-muted">$39.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2019/06/The-Witcher-3-Next-Gen.jpg?w=576&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <p class="card-text"><b>The Witcher 3 Wild Hunt</b> <br>En The Witcher
-                            encarnas a Geralt de Rivia, un cazador de monstruos profesional que tiene que encontrar
-                            a la muchacha protagonista de una profecía en un amplio mundo abierto y rebosante de
-                            ciudades comerciales, islas con piratas vikingos, peligrosos puertos de montaña y cuevas
-                            olvidadas.</p>
-
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span>Requisitos:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <ul>
-                                <li>{{ArrayObjRequisitos[1].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].almacenamiento | json}}</li>
-                            </ul>
-
-                        </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                            <small class="text-muted">$39.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/12/crisis-core-final-fantasy-vii-reunion-pc-juego-pivigames.jpg?w=616&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <p class="card-text"><b>CRISIS CORE – FINAL FANTASY VII – REUNION</b> <br>Es una completa
-                            remasterización del
-                            videojuego de rol y combates por turnos japonés lanzado originalmente en PSP por parte
-                            de Square Enix. Centrada
-                            su narrativa en Zack Fair, un miembro del ejército de la mega corporación
-                            Shinra.<br><br><br>
-                        </p>
-
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span>Requisitos:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <ul>
-                                <li>{{ArrayObjRequisitos[2].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].almacenamiento | json}}</li>
-                            </ul>
-                        </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                            <small class="text-muted">$49.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2019/08/Forza-Horizon-4-Ultimate-Edition-Free-Download-min.jpg?w=680&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <p class="card-text"><b>FORZA HORIZON 4 </b> <br>Juego de conducción y carreras, donde
-                            podrás hacer estaciones dinámicas cambian todo en el festival automotor más importante
-                            del mundo. Colecciona, modifica y conduce más de 450
-                            coches. Corre, entorpece, crea y explora… elige tu camino para convertirte en una
-                            superestrella Horizon.</p>
-
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span>Requisitos:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <ul>
-                                <li>{{ArrayObjRequisitos[3].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].almacenamiento | json}}</li>
-                            </ul>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                            <small class="text-muted">$59.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/08/Marvel-Spiderman-Remastered-Pivigames.jpg?w=616&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <p class="card-text"><b>Marvels Spiderman Remastered</b> <br>Videojuego que salta de PS5 a
-                            PC con una historia totalmente original y que pone al jugador en el rol de un Peter
-                            Parker más experimentado y maduro que debe lidiar con los problemas que suponen el tener
-                            que salvar Manhattan de los peores criminales o villanos y compatibilizarlo con su vida
-                            personal.</p>
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span>Requisitos:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <ul>
-                                <li>{{ArrayObjRequisitos[4].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].almacenamiento | json}}</li>
-                            </ul>
-                        </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                            <small class="text-muted">$49.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2018/07/Descargar-Tekken-7-Ultimate-Edition-PC-Espa%C3%B1ol.jpg?w=620&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <p class="card-text"><b>TEKKEN 7 ULTIMATE EDITION</b> <br>Descubre el épico final del clan
-                            Mishima y descubre los motivos detrás de cada uno de los pasos de esta batalla
-                            interminable. TEKKEN 7, ofrece espectaculares batallas con
-                            cinemáticas narrativas e intensos duelos para disfrutar con amigos y rivales gracias a
-                            las nuevas mecánicas de lucha.</p>
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span>Requisitos:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <ul>
-                                <li>{{ArrayObjRequisitos[5].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].almacenamiento | json}}</li>
-                            </ul>
-                        </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                            <small class="text-muted">$39.99</small>
                         </div>
                     </div>
                 </div>

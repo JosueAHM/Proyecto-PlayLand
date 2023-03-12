@@ -20,6 +20,9 @@ export class JuegosService_BE {
   getJuegosLazamientos(general:GeneralJuegos){
     return this.http.post(this.urlhost + this.urlApi+"/consulta-juegos-lanzamientos",general);
   }
+  getJuegosRequisitos(general:GeneralJuegos){
+    return this.http.post(this.urlhost + this.urlApi+"/consulta-juegos-requsitos",general);
+  }
 //   getProductosId(id: string){
 //     console.log(this.urlhost + this.urlApi+"/"+id);
 //     return this.http.get(this.urlhost + this.urlApi+"/"+id);
