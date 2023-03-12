@@ -1,28 +1,44 @@
-<div>
+<div class="z-5 relative">
   <mat-toolbar color="primary">
     <span id="playland" routerLink="./paginaPrincipal"><mat-icon>games</mat-icon> PlayLand</span>
     <span class="example-spacer"></span>
-    <button mat-button class="boton" (click)="irPagPrincipalTienda()">Tienda</button>
+    <button class="ocultarColapse boton" style="background-color: transparent; border: none; color: white; font-size: 15px;" (click)="irPagPrincipalTienda()">Tienda</button>
 
-    <mat-menu #appMenu="matMenu">
-      <button mat-menu-item routerLink="./requisitosAltos"> <mat-icon>thumb_up</mat-icon> Requisitos Altos</button>
-      <button mat-menu-item routerLink="./requisitosMedios"> <mat-icon>thumbs_up_down</mat-icon> Requisitos
+    <mat-menu class="ocultarColapse"  #appMenu="matMenu">
+      <button class="m-0" mat-menu-item routerLink="./requisitosAltos"> <mat-icon>thumb_up</mat-icon> Requisitos Altos</button>
+      <button class="m-0" mat-menu-item routerLink="./requisitosMedios"> <mat-icon>thumbs_up_down</mat-icon> Requisitos
         Medios</button>
-      <button mat-menu-item routerLink="./requisitosBajos"> <mat-icon>thumb_down</mat-icon> Requisitos Bajos</button>
+      <button class="m-0" mat-menu-item routerLink="./requisitosBajos"> <mat-icon>thumb_down</mat-icon> Requisitos Bajos</button>
     </mat-menu>
     
-    <button mat-button class="boton" [matMenuTriggerFor]="appMenu">Requisitos</button>
-    <button mat-button class="boton" routerLink="./ofertas">Ofertas</button>
+    <button class="ocultarColapse boton" style="background-color: transparent; border: none; color: white; font-size: 15px;" [matMenuTriggerFor]="appMenu">Requisitos</button>
+    <button class="ocultarColapse boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"  routerLink="./ofertas">Ofertas</button>
     <span class="example-spacer"></span>
 
-    <mat-icon id="carrito" class="cart" matBadgeColor="warn" matTooltip="Ver tus compras en el carrito"
-      routerLink="./cart" matBadge="15">shopping_cart
-      <span id="cart_menu_num" data-action="cart-can" class="badge rounded-circle">0
-      </span>
-    </mat-icon>
+    <a routerLink="./cart"  class="font-bold ocultarColapse no-underline boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-shopping-cart"></i></a>
     
-    <button mat-button (click)="irLogin()"><mat-icon>account_circle</mat-icon>Iniciar Sesion</button>
+    <button (click)="irLogin()" class="font-bold ocultarColapse boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-user mr-3"></i> Iniciar Sesion</button>
 
+    <div (click)="habilitarDiv()" class="iconoOculto">
+      <i class="pi pi-bars"></i>
+    </div>
+    <div *ngIf="ocultarDiv" class="iconoOculto shadow-8 position-absolute w-max" style="right:0px; top:55px; background-color: rgb(0, 0, 0);">
+      <div class="relative">
+        <button class="boton my-0 p-0 ml-3" style="background-color: transparent; border: none; color: white; font-size: 15px;" [matMenuTriggerFor]="menu">Requisitos</button>
+        <mat-menu  #menu="matMenu">
+          <button class="m-0" mat-menu-item routerLink="./requisitosAltos"> <mat-icon>thumb_up</mat-icon> Requisitos Altos</button>
+          <button class="m-0" mat-menu-item routerLink="./requisitosMedios"> <mat-icon>thumbs_up_down</mat-icon> Requisitos
+            Medios</button>
+          <button  class="m-0" mat-menu-item routerLink="./requisitosBajos"> <mat-icon>thumb_down</mat-icon> Requisitos Bajos</button>
+        </mat-menu>
+        <br>
+        <button class="boton my-0 p-0 ml-3" style="background-color: transparent; border: none; color: white; font-size: 15px;"  routerLink="./ofertas">Ofertas</button>
+        <br>
+        <a routerLink="./cart"  class="font-bold ml-3  no-underline boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-shopping-cart"> Carrito</i></a>
+        <br>
+        <button (click)="irLogin()" class="font-bold my-0 p-0 ml-3 boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-user mr-3"></i> Iniciar Sesion</button>
+      </div>
+    </div>
 
   </mat-toolbar>
 </div>

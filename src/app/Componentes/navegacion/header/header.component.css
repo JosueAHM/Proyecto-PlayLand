@@ -34,5 +34,21 @@ button {
   padding: 2rem;
 }
 .boton:hover{
-  background-color: #1b2838;
+  color: #85b1e7d5!important;
+}
+
+.ocultarColapse{
+  display: block;
+}
+.iconoOculto{
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .ocultarColapse{
+    display: none;
+  }
+  .iconoOculto{
+    display: block;
+  }
 }

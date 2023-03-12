@@ -12,12 +12,16 @@ export class HeaderComponent {
   ) { }
   Color:boolean = true;
 
-
+  ocultarDiv = false;
   irLogin(){
     this.router.navigate(['/paginaLogin']);
     this.Color=false;
   }
 
+  habilitarDiv(){
+    this.ocultarDiv = !this.ocultarDiv;
+    console.log(this.ocultarDiv);
+  }
 
 
 
