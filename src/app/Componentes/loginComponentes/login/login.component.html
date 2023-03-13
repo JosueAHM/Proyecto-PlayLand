@@ -1,10 +1,10 @@
-<div class="contenedor-p">
-  <div class="contenedor-login">
+<div class="contenedor-p w-full flex justify-content-center">
+  <div class="contenedor-login sm:w-9 md:w-5 lg:w-5 xl:w-5 my-8">
     <h4 class="text-login">LOGIN</h4>
     <form [formGroup]="loginForm" novalidate class="d-flex-center">
       <div class="containerInp">
         <div>
-          <mat-form-field>
+          <mat-form-field class="w-full">
             <input matInput placeholder="Email" formControlName="email" />
             <mat-error *ngIf="
                 !loginForm.get('email')?.errors?.required &&
@@ -23,13 +23,8 @@
           </mat-form-field>
         </div>
         <div class="mt-top-2">
-          <mat-form-field>
+          <mat-form-field class="w-full">
             <input matInput type="password" placeholder="Contraseña" formControlName="password" />
-            <mat-error *ngIf="!loginForm.get('password')?.errors?.required">
-              La longitud de la contraseña debe ser mayor o igual a 8 y la
-              contraseña debe contener uno o más caracteres en mayúsculas,
-              minúsculas, numéricos y especiales
-            </mat-error>
             <mat-error *ngIf="
                 loginForm.get('password')?.invalid &&
                 (loginForm.get('password')?.dirty ||
@@ -39,17 +34,23 @@
               Contraseña requerida
             </mat-error>
           </mat-form-field>
+          <div *ngIf="loginForm.get('password').errors?.pattern">
+            <mat-error class="-mt-6 text-left mb-2">
+              <p class="ml-2 pt-2" style="font-size: 12px;">Formato incorrecto de la contraseña debe tener minimo 8 caracteres, caracteres en mayúsculas,
+                minúsculas, numéricos y especiales</p>
+            </mat-error>
+          </div>
         </div>
-        <div class="mt-top">
+        <div class="mt-1">
           <button [disabled]="!loginForm.valid" mat-raised-button color="primary" mat-button type="submit"
             (click)="loginCliente()">
             Iniciar Sesión
           </button>
         </div>
 
-        <div class="noCuenta">
+        <div class="noCuenta mt-4">
           <b class="msgNoCuenta">No tienes una cuenta?</b>
-          <a class="enlacePagRegistro" (click)="irPaginaRegistro()">Registrate</a>
+          <a class="enlacePagRegistro ml-2 cursor-pointer" (click)="irPaginaRegistro()">Registrate</a>
         </div>
       </div>
     </form>

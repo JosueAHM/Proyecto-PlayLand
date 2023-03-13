@@ -1,11 +1,11 @@
 
-<div class="contenedor-p">
-  <div class="contenedor-login">
+<div class="contenedor-p w-full flex justify-content-center">
+  <div class="contenedor-login w-10 sm:w-10 md:w-6 lg:w-6 xl:w-6 my-6">
     <h4 class="text-login">REGISTRO</h4>
     <form [formGroup]="registroForm" novalidate class="d-flex-center">
       <div class="containerInp">
         <div>
-          <mat-form-field>
+          <mat-form-field class="w-full">
             <input matInput placeholder="Email" formControlName="email" />
             <mat-error
               *ngIf="
@@ -28,18 +28,13 @@
           </mat-form-field>
         </div>
         <div class="mt-top-2">
-          <mat-form-field>
+          <mat-form-field class="w-full">
             <input
               matInput
               type="password"
               placeholder="Contraseña"
               formControlName="password"
             />
-            <mat-error *ngIf="!registroForm.get('password')?.errors?.required">
-              La longitud de la contraseña debe ser mayor o igual a 8 y la
-              contraseña debe contener uno o más caracteres en mayúsculas,
-              minúsculas, numéricos y especiales
-            </mat-error>
             <mat-error
               *ngIf="
                 registroForm.get('password')?.invalid &&
@@ -52,30 +47,33 @@
             </mat-error>
           </mat-form-field>
         </div>
+        <div *ngIf="registroForm.get('password').errors?.pattern">
+          <mat-error class="-mt-5" >
+            <p class="ml-2 text-left" style="font-size: 12px;">
+              La longitud de la contraseña debe ser mayor o igual a 8 y la
+              contraseña debe contener uno o más caracteres en mayúsculas,
+              minúsculas, numéricos y especiales
+            </p>
+          </mat-error>
+        </div>
 
         <div class="mt-top-2">
-          <mat-form-field>
+          <mat-form-field class="w-full">
             <input
               matInput
               type="password"
               placeholder="Confirmar Contraseña"
               formControlName="confirmPassword"
             />
-            <mat-error *ngIf="!registroForm.get('password')?.errors?.required">
-
-            </mat-error>
-            <mat-error
-              *ngIf="
-                registroForm.get('password')?.invalid &&
-                (registroForm.get('password')?.dirty ||
-                  registroForm.get('password')?.touched) &&
-                registroForm.get('password')?.errors?.required
-              "
-            >
-              Contraseñas no coinciden
-            </mat-error>
           </mat-form-field>
         </div>
+       <div *ngIf="registroForm.value.confirmPassword!=registroForm.value.password">
+         <mat-error class="-mt-5">
+           <p class="ml-2 text-left" style="font-size: 12px;">
+             Contraseñas no coinciden
+           </p>
+         </mat-error>
+       </div>
 
         <div class="mt-top">
           <button

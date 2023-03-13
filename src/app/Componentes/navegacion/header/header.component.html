@@ -15,9 +15,9 @@
     <button class="ocultarColapse boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"  routerLink="./ofertas">Ofertas</button>
     <span class="example-spacer"></span>
 
-    <a routerLink="./cart"  class="font-bold ocultarColapse no-underline boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-shopping-cart"></i></a>
+    <a *ngIf="comprobarUsuarioInicioSeccion()" routerLink="./cart"  class="font-bold ocultarColapse no-underline boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-shopping-cart"></i></a>
     
-    <button (click)="irLogin()" class="font-bold ocultarColapse boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-user mr-3"></i> Iniciar Sesion</button>
+    <button (click)="irLogin()" class="font-bold ocultarColapse boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-user mr-3"></i> {{login}}</button>
 
     <div (click)="habilitarDiv()" class="iconoOculto">
       <i class="pi pi-bars"></i>
@@ -34,9 +34,8 @@
         <br>
         <button class="boton my-0 p-0 ml-3" style="background-color: transparent; border: none; color: white; font-size: 15px;"  routerLink="./ofertas">Ofertas</button>
         <br>
-        <a routerLink="./cart"  class="font-bold ml-3  no-underline boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-shopping-cart"> Carrito</i></a>
-        <br>
-        <button (click)="irLogin()" class="font-bold my-0 p-0 ml-3 boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-user mr-3"></i> Iniciar Sesion</button>
+        <a *ngIf="comprobarUsuarioInicioSeccion()" routerLink="./cart"  class="font-bold ml-3  no-underline boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-shopping-cart"> Carrito</i><br></a>
+        <button (click)="irLogin()" class="font-bold my-0 p-0 ml-3 boton" style="background-color: transparent; border: none; color: white; font-size: 15px;"> <i class="pi pi-user mr-3"></i> {{login}}</button>
       </div>
     </div>
 

@@ -12,6 +12,8 @@ export class HeaderComponent {
   ) { }
   Color:boolean = true;
 
+  login : string = "Iniciar Sesión";
+
   ocultarDiv = false;
   irLogin(){
     this.router.navigate(['/paginaLogin']);
@@ -23,7 +25,9 @@ export class HeaderComponent {
     console.log(this.ocultarDiv);
   }
 
-
+  comprobarUsuarioInicioSeccion():boolean{
+    return (localStorage.getItem('token_value') != null);
+  }
 
 
   irPagPrincipalTienda() {

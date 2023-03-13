@@ -8,10 +8,6 @@
 .contenedor-p{
   background: linear-gradient( 50deg,#2a475e, #000000ec );
   background-size: cover;
-  height: 100vh;
-  display:flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .contenedor-login{
@@ -20,7 +16,6 @@
   background-color: hsl(0, 0%, 79%);
   border-radius: 20px;
   width: 350px;
-  box-shadow: 14px 14px 15px 12px;
 }
 
 ._snackBar{
