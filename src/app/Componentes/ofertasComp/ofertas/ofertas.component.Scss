@@ -1,0 +1,29 @@
+
+::ng-deep .ofertas {
+    background-color: #1b2838;
+    color: #c7d5e0;
+  }
+  ::ng-deep .ofertas1{
+    color: #c7d5e0;
+  }
+.Subtitulo {
+    display: flex;
+    justify-content: center;
+    font-size: x-large;
+    background-color: #1b2938;
+    color: #c7d5e0;
+    padding: 1.5rem;
+}
+::ng-deep{
+  .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab__text-label {
+     color: white!important;
+  }
+  .mat-mdc-tab:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled).mdc-tab--active .mdc-tab__text-label{
+      color: #3f51b5!important;
+  }
+  .mat-icon{
+     margin-right: 10px;
+  }
+
+}
+ 

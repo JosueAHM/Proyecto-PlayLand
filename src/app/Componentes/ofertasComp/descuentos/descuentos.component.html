@@ -8,319 +8,47 @@
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
 
-<div class="ContenedorPadre">
-    <div class="container">
-
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://upload.wikimedia.org/wikipedia/en/thumb/8/8d/Dark_Souls_Cover_Art.jpg/220px-Dark_Souls_Cover_Art.jpg"
-                        class="bd-placeholder-img card-img-top" width="100%" height="400"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <span>{{ArrayObjJuegos[0].nombre | json}} </span>
-                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[0].descuento | json}}</span>
-                        <span class="card-text">Precio:</span> ${{ArrayObjJuegos[0].precio | json}}
-
-                        <mat-expansion-panel class="descr" hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>{{ArrayObjJuegos[0].descripcion | json}}</p>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-
-                                <button mat-button class="boton"
-                                    (click)="agregarJuego(ArrayObjJuegos[0])"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
+    <div class="ContenedorPrincipal">
+        <div class="container">
+            <div class="grid">
+                <div class="sm:col-12 md:col-6 lg:col-4 xl:col-4" *ngFor="let juego of juegosDescuento">
+                    <div class="card shadow-sm">
+                        <img src="{{juego.src}}"
+                            class="bd-placeholder-img card-img-top" width="100%" height="300"
+                            xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
+                            preserveAspectRatio="xMidYMid slice" focusable="false">
+                        <title>Imagen Juego</title>
+    
+                        <div class="card-body">
+                            <p class="card-text"><b>Titulo: {{juego.nombre}}</b></p>
+                            <p class="text-white">Precio: {{juego.precio | currency}} <span class="mt-2">Descuento: {{juego.descuento}}%</span></p>
+                            <div class="w-full surface-300 p-0 m-0 border-round-lg">
+                                <div class="py-1 bg-green-600 border-round-lg" style="width: {{juego.descuento}}%;">
+                                    <span class="w-full text-center" style="font-size: 12px;">{{juego.descuento}}%</span>
+                                </div>
+                            </div>
+                            <p class="text-white mt-3">Precio final: {{precioFinal(juego.precio,juego.descuento) | currency}}</p>
+                            <mat-expansion-panel hideToggle class="mt-4">
+                                <mat-expansion-panel-header>
+                                    <mat-panel-title>
+                                        <span>Descripción:</span>
+                                    </mat-panel-title>
+                                </mat-expansion-panel-header>
+                                <ul>
+                                    <li>{{juego.descripcion}}</li>
+                                </ul>
+    
+                            </mat-expansion-panel>
+                            <div class="w-12 flex justify-content-center mt-4">
+                                <div class="w-max">
+                                    <button class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-cart-plus"></li> Añadir al carrito </button>
+                                    &nbsp;&nbsp;
+                                    <button class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-wallet"></li> Comprar </button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://as.com/meristation/imagenes/2018/11/21/game_cover/309156061542796774.jpg"
-                        class="bd-placeholder-img card-img-top" width="100%" height="400"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <span>{{ArrayObjJuegos[1].nombre | json}} </span>
-                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[1].descuento | json}}</span>
-                        <span class="card-text">Precio:</span> ${{ArrayObjJuegos[1].precio | json}}
-
-                        <mat-expansion-panel class="descr" hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>{{ArrayObjJuegos[1].descripcion | json}}</p>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"
-                                    (click)="agregarJuego(ArrayObjJuegos[1])"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://store-images.s-microsoft.com/image/apps.6448.14216942822196343.dfa45b94-960e-4595-b2be-f54c2f268b7a.6ad58563-3523-4690-8e1b-199e66021326?mode=scale&q=90&h=225&w=150"
-                        class="bd-placeholder-img card-img-top" width="100%" height="400"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <span>{{ArrayObjJuegos[2].nombre | json}} </span>
-                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[2].descuento | json}}</span>
-                        <span class="card-text">Precio:</span> ${{ArrayObjJuegos[2].precio | json}}
-
-                        <mat-expansion-panel class="descr" hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>{{ArrayObjJuegos[2].descripcion | json}}</p>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"
-                                    (click)="agregarJuego(ArrayObjJuegos[2])"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i.3djuegos.com/juegos/10583/cuphead/fotos/ficha/cuphead-3841932.jpg"
-                        class="bd-placeholder-img card-img-top" width="100%" height="400"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <span>{{ArrayObjJuegos[3].nombre | json}} </span>
-                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[3].descuento | json}}</span>
-                        <span class="card-text">Precio:</span> ${{ArrayObjJuegos[3].precio | json}}
-
-                        <mat-expansion-panel class="descr" hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>{{ArrayObjJuegos[3].descripcion | json}}</p>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"
-                                    (click)="agregarJuego(ArrayObjJuegos[3])"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i.3djuegos.com/juegos/11596/hollow_knight/fotos/ficha/hollow_knight-3915488.jpg"
-                        class="bd-placeholder-img card-img-top" width="100%" height="400"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <span>{{ArrayObjJuegos[4].nombre | json}} </span>
-                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[4].descuento | json}}</span>
-                        <span class="card-text">Precio:</span> ${{ArrayObjJuegos[4].precio | json}}
-
-                        <mat-expansion-panel class="descr" hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>{{ArrayObjJuegos[4].descripcion | json}}</p>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"
-                                    (click)="agregarJuego(ArrayObjJuegos[4])"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Celeste_box_art_final_2.png"
-                        class="bd-placeholder-img card-img-top" width="100%" height="400"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <span>{{ArrayObjJuegos[5].nombre | json}} </span>
-                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[5].descuento | json}}</span>
-                        <span class="card-text">Precio:</span> ${{ArrayObjJuegos[5].precio | json}}
-
-                        <mat-expansion-panel class="descr" hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>{{ArrayObjJuegos[5].descripcion | json}}</p>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"
-                                    (click)="agregarJuego(ArrayObjJuegos[5])"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://static-cdn.jtvnw.net/ttv-boxart/490744_IGDB-272x380.jpg"
-                        class="bd-placeholder-img card-img-top" width="100%" height="400"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <span>{{ArrayObjJuegos[6].nombre | json}} </span>
-                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[6].descuento | json}}</span>
-                        <span class="card-text">Precio:</span> ${{ArrayObjJuegos[6].precio | json}}
-
-                        <mat-expansion-panel class="descr" hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>{{ArrayObjJuegos[6].descripcion | json}}</p>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"
-                                    (click)="agregarJuego(ArrayObjJuegos[6])"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/855/public/media/image/2017/03/sonic-mania-caratula.jpg?itok=HXZlkPkH"
-                        class="bd-placeholder-img card-img-top" width="100%" height="400"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <span>{{ArrayObjJuegos[7].nombre | json}} </span>
-                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[7].descuento | json}}</span>
-                        <span class="card-text">Precio:</span> ${{ArrayObjJuegos[7].precio | json}}
-
-                        <mat-expansion-panel class="descr" hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>{{ArrayObjJuegos[7].descripcion | json}}</p>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"
-                                    (click)="agregarJuego(ArrayObjJuegos[7])"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://cdn.hobbyconsolas.com/sites/navi.axelspringer.es/public/styles/480/public/media/image/2013/02/211616-caratula-pantallas-watch-dogs.jpg?itok=ZAWxzJbo"
-                        class="bd-placeholder-img card-img-top" width="100%" height="400"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <span>{{ArrayObjJuegos[8].nombre | json}} </span>
-                        <span>Descuento:</span> <span class="desc">{{ArrayObjJuegos[8].descuento | json}}</span>
-                        <span class="card-text">Precio:</span> ${{ArrayObjJuegos[8].precio | json}}
-
-                        <mat-expansion-panel class="descr" hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span style="color: #c7d5e0 !important;">Descripcion:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>{{ArrayObjJuegos[8].descripcion | json}}</p>
-                        </mat-expansion-panel>
-
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"
-                                    (click)="agregarJuego(ArrayObjJuegos[8])"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton"
-                                    (click)="openDialogSesion()"><mat-icon>shop</mat-icon>Comprar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
-
-</div>

@@ -46,6 +46,8 @@ import { PagPrincipalTiendaComponent } from './Componentes/paginasJuegosComponen
 import { LoginHeaderComponent } from './Componentes/loginComponentes/login-header/login-header.component';
 import { LoginComponent } from './Componentes/loginComponentes/login/login.component';
 import { PaginaPrincipalComponent } from './Componentes/pagina-principal/pagina-principal.component';
+import {ProgressBarModule} from 'primeng/progressbar';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -92,7 +94,9 @@ import { PaginaPrincipalComponent } from './Componentes/pagina-principal/pagina-
     CommonModule,
     MatInputModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    ProgressBarModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

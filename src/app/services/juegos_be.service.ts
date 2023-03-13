@@ -23,6 +23,12 @@ export class JuegosService_BE {
   getJuegosRequisitos(general:GeneralJuegos){
     return this.http.post(this.urlhost + this.urlApi+"/consulta-juegos-requsitos",general);
   }
+  getJuegosDescuento(){
+    return this.http.get(this.urlhost + this.urlApi+"/consulta-juegos-descuento");
+  }
+  getJuegosColeccion(){
+    return this.http.get(this.urlhost + this.urlApi+"/consulta-juegos-colecciones");
+  }
 //   getProductosId(id: string){
 //     console.log(this.urlhost + this.urlApi+"/"+id);
 //     return this.http.get(this.urlhost + this.urlApi+"/"+id);
