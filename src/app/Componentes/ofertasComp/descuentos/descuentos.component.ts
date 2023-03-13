@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Juegos } from 'src/app/interface/juegos';
 import { MatDialog } from '@angular/material/dialog';
-import { CompraComponent } from '../../compra/compra.component';
-import { JuegosService } from 'src/app/services/juegos.service';
 import { JuegosService_BE } from 'src/app/services/juegos_be.service';
 import { RequisitosModel } from 'src/app/Models/requisitos.model';
 import { JuegosModel } from 'src/app/Models/juegos.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-descuentos',
@@ -15,6 +13,7 @@ import { JuegosModel } from 'src/app/Models/juegos.model';
 export class DescuentosComponent  implements OnInit {
   
   constructor(
+    private router : Router,
     private dialog: MatDialog, 
     private _serviceJuego: JuegosService_BE) {
   }
@@ -66,16 +65,29 @@ export class DescuentosComponent  implements OnInit {
     return precio-precioDescuento;
   }
 
-  // agregarJuego(juego: any) {
-  //   console.log(juego, "agregaodo")
-  //   console.log("uwu")
-  //   this._serviceJuego.agregarCarrito(juego)
-  //   //this._serviceJuego.validarExiste(juego)
+  validadorInicioSesion = false;
 
-  // }
+  stringModla = "";
 
-  // openDialogSesion() {
-  //   this.dialog.open(CompraComponent)
+  validarComprar(){
+    if(localStorage.getItem('token_value') == null){
+      this.validadorInicioSesion = true;
+      this.stringModla = "Para poder comprar un juego el usuario debe tener iniciado la sesión.";
+    }
+  }
+  validarCarrito(){
+    if(localStorage.getItem('token_value') == null){
+      this.validadorInicioSesion = true;
+      this.stringModla = "Para poder añadir un juego al carrito de compras el usuario debe tener la iniciado sesión.";
+    }
+  }
 
-  // }
+  cambiarEstadoValidador(){
+    this.validadorInicioSesion = !this.validadorInicioSesion;
+    console.log(this.validadorInicioSesion);
+  }
+
+  irInicioSesion(){
+    this.router.navigateByUrl('/paginaLogin');
+  }
 }

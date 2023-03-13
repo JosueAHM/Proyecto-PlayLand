@@ -75,4 +75,30 @@ export class PagJuegosDisponiblesComponent implements OnInit {
 
   }
 
+  validadorInicioSesion = false;
+
+  stringModla = "";
+
+  validarComprar(){
+    if(localStorage.getItem('token_value') == null){
+      this.validadorInicioSesion = true;
+      this.stringModla = "Para poder comprar un juego el usuario debe tener iniciado la sesión.";
+    }
+  }
+  validarCarrito(){
+    if(localStorage.getItem('token_value') == null){
+      this.validadorInicioSesion = true;
+      this.stringModla = "Para poder añadir un juego al carrito de compras el usuario debe tener la iniciado sesión.";
+    }
+  }
+
+  cambiarEstadoValidador(){
+    this.validadorInicioSesion = !this.validadorInicioSesion;
+    console.log(this.validadorInicioSesion);
+  }
+
+  irInicioSesion(){
+    this.router.navigateByUrl('/paginaLogin');
+  }
+
 }

@@ -6,6 +6,7 @@ import { JuegosService_BE } from 'src/app/services/juegos_be.service';
 import { GeneralJuegos } from 'src/app/Models/consulta_general.model';
 import { JuegosModel } from 'src/app/Models/juegos.model';
 import { RequisitosModel } from 'src/app/Models/requisitos.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-requisitos-altos',
@@ -15,6 +16,7 @@ import { RequisitosModel } from 'src/app/Models/requisitos.model';
 export class RequisitosAltosComponent implements OnInit {
 
   constructor(
+    private router : Router,
     private dialog: MatDialog,
     private _serviceJuego_BE: JuegosService_BE
   ) {}
@@ -70,6 +72,32 @@ export class RequisitosAltosComponent implements OnInit {
 
   openDialogSesion() {
     this.dialog.open(CompraComponent)
+  }
+
+  validadorInicioSesion = false;
+
+  stringModla = "";
+
+  validarComprar(){
+    if(localStorage.getItem('token_value') == null){
+      this.validadorInicioSesion = true;
+      this.stringModla = "Para poder comprar un juego el usuario debe tener iniciado la sesión.";
+    }
+  }
+  validarCarrito(){
+    if(localStorage.getItem('token_value') == null){
+      this.validadorInicioSesion = true;
+      this.stringModla = "Para poder añadir un juego al carrito de compras el usuario debe tener la iniciado sesión.";
+    }
+  }
+
+  cambiarEstadoValidador(){
+    this.validadorInicioSesion = !this.validadorInicioSesion;
+    console.log(this.validadorInicioSesion);
+  }
+
+  irInicioSesion(){
+    this.router.navigateByUrl('/paginaLogin');
   }
 
 }

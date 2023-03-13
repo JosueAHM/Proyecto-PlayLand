@@ -26,9 +26,9 @@
                   </mat-expansion-panel>
                   <div class="w-12 flex justify-content-center mt-4">
                       <div class="w-max">
-                          <button class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-cart-plus"></li> Añadir al carrito </button>
+                          <button (click)="validarCarrito()"  class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-cart-plus"></li> Añadir al carrito </button>
                           &nbsp;&nbsp;
-                          <button class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-wallet"></li> Comprar </button>
+                          <button (click)="validarComprar()" class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-wallet"></li> Comprar </button>
                       </div>
                   </div>
               </div>
@@ -37,3 +37,24 @@
   </div>
   </div>
 </div>
+
+
+<!-- Cuadro de dialogos -->
+
+<p-dialog [style]="{width: '30vw'}" [visible]="validadorInicioSesion" 
+          [draggable]="false"
+          [resizable]="false"
+          [modal]="true"
+          [closable]="false"
+          [responsive]="true">
+    <p-header class="dialogHeader text-center">
+        Usuario no inicio sesión
+    </p-header>
+       <div>
+        {{stringModla}}
+       </div>
+    <p-footer>
+        <button (click)="cambiarEstadoValidador()"  pButton type="button" label="Cancelar" class="p-button-danger"></button>
+        <button (click)="irInicioSesion()"  pButton  type="button" label="Iniciar sesión" class="p-button-success"></button>
+    </p-footer>
+</p-dialog>

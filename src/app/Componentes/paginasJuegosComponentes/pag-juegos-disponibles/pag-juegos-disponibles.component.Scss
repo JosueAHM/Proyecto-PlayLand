@@ -44,6 +44,11 @@ button {
     .mat-icon{
        margin-right: 10px;
     }
+    .p-dialog-mask.p-component-overlay{
+        background-color: rgba(0, 0, 0, 0.767)!important;
+        height: 100vh!important;
+        z-index: 100;
+    }
 
 }
    

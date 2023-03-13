@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { GeneralJuegos } from 'src/app/Models/consulta_general.model';
 import { JuegosModel } from 'src/app/Models/juegos.model';
 import { JuegosService_BE } from 'src/app/services/juegos_be.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pag-proximos-lanzamientos',
@@ -14,7 +15,12 @@ import { JuegosService_BE } from 'src/app/services/juegos_be.service';
 })
 export class PagProximosLanzamientosComponent implements OnInit {
 
-  constructor(private _serviceJuego: JuegosService, private dialog: MatDialog,private _serviceJuego_BE: JuegosService_BE) { }
+  constructor(
+                private router: Router,
+                private _serviceJuego: JuegosService, 
+                private dialog: MatDialog,
+                private _serviceJuego_BE: JuegosService_BE) 
+  { }
 
   juegosDisponibles : JuegosModel[] = [];
 
@@ -63,5 +69,32 @@ export class PagProximosLanzamientosComponent implements OnInit {
     this.dialog.open(CompraComponent)
 
   }
+
+  validadorInicioSesion = false;
+
+  stringModla = "";
+
+  validarComprar(){
+    if(localStorage.getItem('token_value') == null){
+      this.validadorInicioSesion = true;
+      this.stringModla = "Para poder comprar un juego el usuario debe tener iniciado la sesión.";
+    }
+  }
+  validarCarrito(){
+    if(localStorage.getItem('token_value') == null){
+      this.validadorInicioSesion = true;
+      this.stringModla = "Para poder añadir un juego al carrito de compras el usuario debe tener la iniciado sesión.";
+    }
+  }
+
+  cambiarEstadoValidador(){
+    this.validadorInicioSesion = !this.validadorInicioSesion;
+    console.log(this.validadorInicioSesion);
+  }
+
+  irInicioSesion(){
+    this.router.navigateByUrl('/paginaLogin');
+  }
+
 
 }

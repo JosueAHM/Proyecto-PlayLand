@@ -48,6 +48,9 @@ import { LoginComponent } from './Componentes/loginComponentes/login/login.compo
 import { PaginaPrincipalComponent } from './Componentes/pagina-principal/pagina-principal.component';
 import {ProgressBarModule} from 'primeng/progressbar';
 import {ToastModule} from 'primeng/toast';
+import {DynamicDialogModule} from 'primeng/dynamicdialog';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import {DialogModule} from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -73,8 +76,11 @@ import {ToastModule} from 'primeng/toast';
   ],
   imports: [
     BrowserModule,
+    DialogModule,
+    ConfirmDialogModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    DynamicDialogModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
