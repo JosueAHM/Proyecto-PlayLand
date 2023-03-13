@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Requisitos } from 'src/app/interface/juegos';
 import { CompraComponent } from '../compra/compra.component';
+import { RequisitosModel } from 'src/app/Models/requisitos.model';
+import { JuegosModel } from 'src/app/Models/juegos.model';
+import { GeneralJuegos } from 'src/app/Models/consulta_general.model';
+import { JuegosService_BE } from 'src/app/services/juegos_be.service';
 
 
 @Component({
@@ -9,67 +13,58 @@ import { CompraComponent } from '../compra/compra.component';
   templateUrl: './requisitos-medios.component.html',
   styleUrls: ['./requisitos-medios.component.css']
 })
-export class RequisitosMediosComponent {
+export class RequisitosMediosComponent implements OnInit {
 
-  ArrayRequisitos: string[] = ['sistema', 'procesador', 'memoria', 'graficos', 'directx', 'almacenamiento'];
+  constructor(
+    private dialog: MatDialog,
+    private _serviceJuego_BE: JuegosService_BE
+  ) {}
 
-  ArrayObjRequisitos: Requisitos[] = [
-    {
-      sistema: 'Windows 10',
-      procesador: 'Intel Core 2 Duo 2.4Ghz / AMD Athlon 64 X2 5200+, 2.6GHz',
-      memoria: '2 GB de RAM',
-      graficos: ' 512 MB Nvidia GeForce 8800 / ATI Radeon HD 3870',
-      directx: 'Versión 9.0c',
-      almacenamiento: ' 10 GB de espacio disponible'
-    },
-    {
-      sistema: 'Windows 7 or later',
-      procesador: '  Intel Core i5 2.6GHz or similar',
-      memoria: '6 GB de RAM',
-      graficos: ' GeForce GTX 700 series or similar',
-      directx: ' Versión 11',
-      almacenamiento: ' 10 GB de espacio disponible'
-    },
-    {
-      sistema: 'Windows® 10 / Windows® 11 64-bit',
-      procesador: '3 GHz Dual Core Processor',
-      memoria: ' 6 GB de RAM',
-      graficos: ' GTX 960 Series or Equivalent',
-      directx: 'Versión 11',
-      almacenamiento: ' 00 GB de espacio disponible'
-    },
-    {
-      sistema: 'Windows 10 version 15063.0 or higher',
-      procesador: 'Intel i3-4170 @ 3.7Ghz OR Intel i5 750 @ 2.67Ghz',
-      memoria: '8 GB de RAM',
-      graficos: '  NVidia 650TI OR AMD R7 250x',
-      directx: 'Versión 12',
-      almacenamiento: ' 80 GB de espacio disponible'
-    },
-    {
-      sistema: 'Windows 7 64-bit | Windows 8 64-bit | Windows 10 64-bit',
-      procesador: ' Intel Core i3-2100 | AMD FX-6300',
-      memoria: '4 GB de RAM',
-      graficos: 'NVIDIA GeForce GTX 760 | AMD Radeon HD 7950',
-      directx: 'Versión 11',
-      almacenamiento: ' 25 GB de espacio en disco duro'
-    },
-    {
-      sistema: 'Windows 7+',
-      procesador: ' Intel Core i3-2100 / AMD® FX-6300',
-      memoria: ' 8 GB de RAM',
-      graficos: '  Nvidia GTX 560',
-      directx: 'Versión 11',
-      almacenamiento: ' 6 GB de espacio disponible'
-    },
-  ]
-
-
-  constructor(private dialog: MatDialog) {
-
+  ngOnInit(): void {
+    this.obtenerJuego();
   }
 
-  openDialogSesion() {
-    this.dialog.open(CompraComponent)
+  juegosDisponibles : any[] = [];
+
+  obtenerJuego(){
+    let temporalConsulta : GeneralJuegos = {
+      variableEntrada : "MEDIOS",
+      transaccion     : "CONSULTA_JUEGOS_REQUISITOS"
+    }
+    this._serviceJuego_BE.getJuegosLazamientos(temporalConsulta).subscribe((juegos:any)=>{
+      if(juegos.Table1[0].respuesta =! "OK 200"){
+        alert("Error al cargar los juegos => "+juegos.Table1[0].leyenda);
+      }
+      else{
+        juegos.Table.forEach((juego:any) => {
+
+          let requisitosTemporal : RequisitosModel = {
+            sistema: juego.sistema,
+            procesador: juego.procesador,
+            memoria: juego.memoria,
+            graficos: juego.graficos,
+            directx: juego.directx,
+            almacenamiento: juego.almacenamiento,
+            tipoRequisitos: juego.tipoRequisitos,
+            id: null,
+            estado: null
+          }
+
+          let juegoTemporal : JuegosModel = {
+            id : juego.id,
+            requisitos : requisitosTemporal,
+            src : juego.src,
+            nombre : juego.nombre,
+            descripcion : juego.descripcion,
+            precio : juego.precio,
+            fechaLazamiento : juego.fechaLazamiento,
+            descuento : juego.descuento,
+            estado : juego.estado,
+          }
+          this.juegosDisponibles.push(juegoTemporal);
+        });
+       console.log(this.juegosDisponibles);
+      }
+    });
   }
 }

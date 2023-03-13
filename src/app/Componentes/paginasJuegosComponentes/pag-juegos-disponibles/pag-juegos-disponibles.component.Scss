@@ -3,6 +3,37 @@
     background-size: cover;
 }
 
+button {
+    margin: 1rem;
+    padding: 0.5rem;
+    padding-top: 0.5rem;
+}
+
+.ContenedorPrincipal {
+    background-color: #2a475e;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    font-family: Monospace;
+}
+
+.container {
+    background-color: #2a475e;
+}
+
+.card-body {
+    background-color: #1b2838;
+    color: white;
+}
+
+.boton {
+    color: white;
+    background-color: #2a475e;
+}
+
+.boton:hover {
+    background-color: #5290c4;
+}
+
 ::ng-deep{
     .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab__text-label, .mat-mdc-tab-link:not(.mat-mdc-tab-disabled) .mdc-tab__text-label {
        color: white!important;
