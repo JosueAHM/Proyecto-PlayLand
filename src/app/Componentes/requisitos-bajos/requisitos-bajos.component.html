@@ -27,265 +27,41 @@
                 ;)</h2>
         </label>
 
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            <div class="col">
+        <div class="grid">
+            <div class="sm:col-12 md:col-6 lg:col-4 xl:col-4" *ngFor="let juego of juegosDisponibles">
                 <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2019/09/Northgard-Conquest-PC-Espa%C3%B1ol-Gratis.jpg?w=620&ssl=1"
+                    <img src="{{juego.src}}"
                         class="bd-placeholder-img card-img-top" width="100%" height="300"
                         xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
                         preserveAspectRatio="xMidYMid slice" focusable="false">
                     <title>Imagen Juego</title>
-                    <div class="card-body">
-                        <p class="card-text"><b>NORTHGARD CONQUEST</b> <br>Un título que une género y temática en un
-                            videojuego donde un grupo de aventureros han descubierto un nuevo mundo de peligros y
-                            misterios. Con amplias mecánicas de exploración, gestión de recursos y comercio, se debe
-                            ayudar a un pueblo a prosperar y sobrevivir en esta tierra hostil haciendo frente a
-                            criaturas.
-
-                            <mat-expansion-panel hideToggle>
-                                <mat-expansion-panel-header>
-                                    <mat-panel-title>
-                                        <span>Requisitos:</span>
-                                    </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <ul>
-                                    <li>{{ArrayObjRequisitos[0].sistema | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].procesador | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].memoria | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].graficos | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].directx | json}}</li>
-                                    <li>{{ArrayObjRequisitos[0].almacenamiento | json}}</li>
-                                </ul>
-
-                            </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>
-                                    Comprar </button>
-                            </div>
-                            <small class="text-muted">$29.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2021/02/Stranded-Deep-Juego-PiviGames.jpg?w=620&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
 
                     <div class="card-body">
-                        <p class="card-text"><b>STRANDED DEEP</b> <br>
-                            Cuando acabe la introducción de la partida habrás naufragado en una minúscula isla
-                            desierta: tu nuevo hogar.En Stranded Deep la
-                            creación transcurre durante la misma partida. ¿Quieres crear una lanza? Deberás reunir
-                            palos, roca y cuerda y agacharte en la orilla para crear tu nueva herramienta de pesca.
-                        </p>
-                        <mat-expansion-panel hideToggle>
+                        <p class="card-text"><b>{{juego.nombre}}</b><br>
+                           {{juego.descripcion}}<br></p>
+                        <span class="text-white">Precio: {{juego.precio | currency}}</span>
+                        <mat-expansion-panel hideToggle class="mt-4">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
                                     <span>Requisitos:</span>
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
                             <ul>
-                                <li>{{ArrayObjRequisitos[1].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[1].almacenamiento | json}}</li>
+                                <li>{{juego.requisitos.sistema}}</li>
+                                <li>{{juego.requisitos.procesador}}</li>
+                                <li>{{juego.requisitos.memoria}}</li>
+                                <li>{{juego.requisitos.graficos}}</li>
+                                <li>{{juego.requisitos.direct}}</li>
+                                <li>{{juego.requisitos.almacenamiento}}</li>
                             </ul>
 
                         </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>
-                                    Comprar </button>
+                        <div class="w-12 flex justify-content-center mt-4">
+                            <div class="w-max">
+                                <button class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-cart-plus"></li> Añadir al carrito </button>
+                                &nbsp;&nbsp;
+                                <button class="boton py-2 px-1 font-bold m-0" style="border-radius: 5px; border-color: transparent; font-size: 12px;"> <li class="pi pi-wallet"></li> Comprar </button>
                             </div>
-                            <small class="text-muted">$19.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/10/Rimworld-Biotech-Pivigames.jpg?w=616&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <p class="card-text"><b>RIMWORLD</b> <br>Un videojuego de construcción y gestión en
-                            desarrollo por Ludeon Studios.El juego pone al jugador en el papel de gestor de una
-                            nueva colonia en un planeta del borde galáctico, donde los colonos deben sobrevivir a
-                            diversos eventos generados aleatoriamente por la inteligencia artificial «cuenta
-                            cuentos».</p>
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span>Requisitos:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <ul>
-                                <li>{{ArrayObjRequisitos[2].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[2].almacenamiento | json}}</li>
-                            </ul>
-
-                        </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>
-                                    Comprar </button>
-                            </div>
-                            <small class="text-muted">$34.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/04/europa-universalis-iv-lions-of-the-north-pc-game-pivigames.jpg?w=616&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <p class="card-text"><b>EUROPA UNIVERSALIS IV</b> <br>Un juego de estrategia, guerra y
-                            simulación ambientado principalmente en la era de los descubrimientos y la colonización
-                            del nuevo mundo. Comienza en el contexto histórico del final de la Guerra de los Cien
-                            Años y la caída del Imperio Bizantino y continúa a través de las revoluciones de las
-                            trece colonias y francesa.
-                        </p>
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span>Requisitos:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <ul>
-                                <li>{{ArrayObjRequisitos[3].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[3].almacenamiento | json}}</li>
-                            </ul>
-
-                        </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>
-                                    Comprar </button>
-                            </div>
-                            <small class="text-muted">$39.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2022/02/Hearts-of-Iron-IV-Blood-Alone-Pivigames.jpg?w=616&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <p class="card-text"><b>HEARTS OF IRON IV</b> <br>Es la secuela del juego de Hearts of
-                            Iron
-                            III.
-                            Cubre el periodo comprendido entre 1936 y 1948, y se centra en los acontecimientos que
-                            condujeron a la Segunda Guerra Mundial y a la guerra en sí; un juego de estrategia y
-                            guerra
-                            por excelencia.<br><br></p>
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span>Requisitos:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <ul>
-                                <li>{{ArrayObjRequisitos[4].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[4].almacenamiento | json}}</li>
-                            </ul>
-
-                        </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>
-                                    Comprar </button>
-                            </div>
-                            <small class="text-muted">$39.99</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card shadow-sm">
-                    <img src="https://i0.wp.com/pivigames.blog/wp-content/uploads/2020/09/Stonehard-Way-Forward-PiviGames.jpg?w=650&ssl=1"
-                        class="bd-placeholder-img card-img-top" width="100%" height="300"
-                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail"
-                        preserveAspectRatio="xMidYMid slice" focusable="false">
-                    <title>ImagenJuego</title>
-
-                    <div class="card-body">
-                        <p class="card-text"><b>STONESHARD</b> <br>Un desafiante RPG de mundo abierto con elementos
-                            propios de las aventuras roguelike y los videojuegos de supervivencia. Inspirado en
-                            clásicos como Diablo, Darkest Dungeon y The Banner
-                            Saga, en esta aventura de rol nos embarcamos en un peligroso viaje a través de un mundo
-                            de fantasía repleto de monstruos.
-                        </p>
-                        <mat-expansion-panel hideToggle>
-                            <mat-expansion-panel-header>
-                                <mat-panel-title>
-                                    <span>Requisitos:</span>
-                                </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <ul>
-                                <li>{{ArrayObjRequisitos[5].sistema | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].procesador | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].memoria | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].graficos | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].directx | json}}</li>
-                                <li>{{ArrayObjRequisitos[5].almacenamiento | json}}</li>
-                            </ul>
-
-                        </mat-expansion-panel>
-                        <div class="d-flex justify-content-between align-items-center">
-                            <div class="btn-group">
-                                <button mat-button class="boton"><mat-icon>add_shopping_cart</mat-icon>
-                                    Añadir al carrito </button>
-                                <button mat-button class="boton" (click)="openDialogSesion()"><mat-icon>shop</mat-icon>
-                                    Comprar </button>
-                            </div>
-                            <small class="text-muted">$24.99</small>
                         </div>
                     </div>
                 </div>
