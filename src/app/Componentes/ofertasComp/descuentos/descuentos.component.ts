@@ -133,7 +133,7 @@ export class DescuentosComponent  implements OnInit {
         accion = "AGREGAR_CARRITO"
       }
       let temporalEncioCarritos : CarritoEnviarModel = {
-        idCliente : 1,
+        idCliente :  Number(localStorage.getItem('idCliente')),
         idJuego : juegoComprar.id,
         transaccion : accion
       }

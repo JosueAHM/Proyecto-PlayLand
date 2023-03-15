@@ -30,7 +30,7 @@ export class CartComponent implements OnInit {
 
   llenarServicio(){
     let temporalEncioCarrito : CarritoEnviarModel = {
-      idCliente : 1,
+      idCliente :  Number(localStorage.getItem('idCliente')),
       transaccion : "BUSCAR_CARRITO"
     }
     this._juegoBE.getCarrito(temporalEncioCarrito).subscribe((juego:any)=>{
@@ -61,7 +61,7 @@ export class CartComponent implements OnInit {
 
   eliminarCarrito(index:number,idJuego:any){
     let temporalEncioCarrito : CarritoEnviarModel = {
-      idCliente : 1,
+      idCliente :  Number(localStorage.getItem('idCliente')),
       idJuego : idJuego,
       transaccion : "ELIMINAR_CARRITO"
     }

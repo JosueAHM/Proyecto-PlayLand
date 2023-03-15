@@ -119,7 +119,7 @@ export class ColeccionesComponent implements OnInit {
   anadirCarrito(juegoComprar:JuegosModel){
     let validador = false;
     let temporalEncioCarrito : CarritoEnviarModel = {
-      idCliente : 1,
+      idCliente :  Number(localStorage.getItem('idCliente')),
       transaccion : "BUSCAR_CARRITO"
     }
     this.carritoService.getCarrito(temporalEncioCarrito).subscribe((juego:any)=>{

@@ -117,7 +117,7 @@ export class PagUltimosLanzamientosComponent implements OnInit {
   anadirCarrito(juegoComprar:JuegosModel){
     let validador = false;
     let temporalEncioCarrito : CarritoEnviarModel = {
-      idCliente : 1,
+      idCliente :  Number(localStorage.getItem('idCliente')),
       transaccion : "BUSCAR_CARRITO"
     }
     this.carritoService.getCarrito(temporalEncioCarrito).subscribe((juego:any)=>{
@@ -131,7 +131,7 @@ export class PagUltimosLanzamientosComponent implements OnInit {
         accion = "AGREGAR_CARRITO"
       }
       let temporalEncioCarritos : CarritoEnviarModel = {
-        idCliente : 1,
+        idCliente :  Number(localStorage.getItem('idCliente')),
         idJuego : juegoComprar.id,
         transaccion : accion
       }
