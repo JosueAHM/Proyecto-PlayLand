@@ -12,16 +12,22 @@ export class CarritoService {
   private urlApi: string = 'api/Carrito';
   constructor(private http: HttpClient) { }
 
+  auth_Token = localStorage.getItem('token_value');
+  header = new HttpHeaders({
+    'Content-Type': 'application/json',
+    'Authorization': 'bearer ' +this.auth_Token
+  })
+
   getCarrito(general:CarritoEnviarModel){
-    return this.http.post(this.urlhost + this.urlApi+"/consulta-carito",general);
+    return this.http.post(this.urlhost + this.urlApi+"/consulta-carito",general,{headers: this.header});
   }
 
   agregarCarrito(general:CarritoEnviarModel){
-    return this.http.post(this.urlhost + this.urlApi+"/anadir-carrito",general);
+    return this.http.post(this.urlhost + this.urlApi+"/anadir-carrito",general,{headers: this.header});
   }
   
   EliminarCarrito(general:CarritoEnviarModel){
-    return this.http.post(this.urlhost + this.urlApi+"/eliminar-carrito",general);
+    return this.http.post(this.urlhost + this.urlApi+"/eliminar-carrito",general,{headers: this.header});
   }
   
 

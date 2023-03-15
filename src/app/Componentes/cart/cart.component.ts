@@ -23,7 +23,7 @@ import { CarritoEnviarModel } from 'src/app/Models/carrito.enviar';
 export class CartComponent implements OnInit {
 
   carrito: CarritoModel[] = []
-  constructor(private _servicesJuegos:JuegosService, private _juegoBE : CarritoService){
+  constructor(private _servicesJuegos:JuegosService, private _juegoBE : CarritoService, private ruta:Router){
 
   }
 
@@ -53,6 +53,9 @@ export class CartComponent implements OnInit {
       });
       this.carrito  = temporalCarritoService;
      
+    },(error:any)=>{
+      alert("Usuario no inicio sesión");
+      this.ruta.navigateByUrl('/paginaPrincipal');
     });
   }
   ngOnInit(): void {
