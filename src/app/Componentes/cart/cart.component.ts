@@ -86,6 +86,10 @@ export class CartComponent implements OnInit {
       return valor2;
   }
 
+  eliminarTodos(){
+    this.carrito = [];
+  }
+
 
  
 

@@ -52,18 +52,6 @@ export class LoginComponent {
       }
     });
 
-
-
-    // if(this.loginForm.get("email")!.value == credenciales.email &&
-    //     this.loginForm.get("password")!.value == credenciales.password){
-    //       localStorage.setItem('token_value', this.loginForm);
-    //     this.router.navigate(['/paginaPrincipalTienda']);
-
-
-    // }else{
-    //   this._snackBar.open('Usuario o contrasena incorrecto', 'Aceptar');
-
-    // }
   }
 
   irPaginaRegistro(){

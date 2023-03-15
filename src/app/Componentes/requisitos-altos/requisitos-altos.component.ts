@@ -74,7 +74,6 @@ export class RequisitosAltosComponent implements OnInit {
           }
           this.juegosDisponibles.push(juegoTemporal);
         });
-       console.log(this.juegosDisponibles);
       }
     });
   }
