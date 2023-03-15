@@ -2,17 +2,20 @@ import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { UsuarioLoginModel } from 'src/app/Models/usuario.model';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.Scss']
 })
 export class LoginComponent {
   loginForm: FormGroup | any;
   constructor(
     private router:Router,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _usuarioService:UsuarioService
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email,Validators.pattern(
@@ -33,20 +36,34 @@ export class LoginComponent {
       return;
     }
 
-    const credenciales = {
-      email: "Justin@hotmail.com",
-      password: "Justin@123"
+    let temporalUser : UsuarioLoginModel = {
+      correo : this.loginForm.get("email")!.value,
+      password : this.loginForm.get("password")!.value
     }
 
-    if(this.loginForm.get("email")!.value == credenciales.email &&
-        this.loginForm.get("password")!.value == credenciales.password){
+    this._usuarioService.login(temporalUser).subscribe((resultado:any)=>{
+      if(resultado.respuesta=="200"){
         this.router.navigate(['/paginaPrincipalTienda']);
+        localStorage.setItem('token_value', resultado.token);
+        localStorage.setItem('idCliente', resultado.idCliente);
+      }
+      else{
+        this._snackBar.open('Usuario o contraseña incorrecto', 'Aceptar');
+      }
+    });
 
 
-    }else{
-      this._snackBar.open('Usuario o contrasena incorrecto', 'Aceptar');
 
-    }
+    // if(this.loginForm.get("email")!.value == credenciales.email &&
+    //     this.loginForm.get("password")!.value == credenciales.password){
+    //       localStorage.setItem('token_value', this.loginForm);
+    //     this.router.navigate(['/paginaPrincipalTienda']);
+
+
+    // }else{
+    //   this._snackBar.open('Usuario o contrasena incorrecto', 'Aceptar');
+
+    // }
   }
 
   irPaginaRegistro(){

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import {MatSnackBar, MatSnackBarRef} from '@angular/material/snack-bar';
+import { UsuarioService } from 'src/app/services/usuario.service';
+import { UsuarioCrearModel } from 'src/app/Models/usuarioCrear.model';
 
 @Component({
   selector: 'app-pag-registro-usuario',
@@ -12,7 +14,8 @@ export class PagRegistroUsuarioComponent implements OnInit {
   registroForm: FormGroup | any;
   constructor(
     private router:Router,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _usuarioService:UsuarioService
   ) {
     this.registroForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email,Validators.pattern(
@@ -30,7 +33,21 @@ export class PagRegistroUsuarioComponent implements OnInit {
   }
 
   registroCliente(){
-
+    let userTemp : UsuarioCrearModel = {
+      nombres : "",
+      apellidos : "",
+      correo : this.registroForm.get("email")!.value,
+      contrasena : this.registroForm.get("password")!.value
+    }
+    this._usuarioService.crearUsuario(userTemp).subscribe((data:any)=>{
+      if(data.Table[0].respuesta =! "OK 200"){
+        alert("Error crear cuenta => "+data.Table[0].leyenda);
+      }
+      else{
+        alert("Cuenta creada con exito ahora inicia sessión");
+        this.registroForm.reset();
+      }
+    });
   }
 
 }

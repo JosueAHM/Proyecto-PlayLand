@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container w-full">
     <div class="contenedor1">
         <div id="image">
-            <img src="https://us.123rf.com/450wm/stockphotoatinat/stockphotoatinat1909/stockphotoatinat190900008/stockphotoatinat190900008.jpg?ver=6"
+            <img src="{{juegosComprar.src}}"
                 class="bd-placeholder-img card-img-top" width="100%" xmlns="http://www.w3.org/2000/svg" role="img"
                 aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false">
             <title>ImagenJuego</title>
@@ -10,15 +10,15 @@
 
             <div class="card-contentedor">
 
-                <div class="card-body">
+                <div class="card-body w-full">
+                    <p class="w-full text-center">¿Desea comprar el juego? </p>
+                    <span class="card-text mt-2">Precio: {{juegosComprar.precio | currency}}</span> 
 
-                    <span>¿Desea comprar el juego? </span><br>
-                    <span class="card-text">Precio:</span> $ 59.99
-
-                    <div class="botones-contenedor">
+                    <div class="botones-contenedor mt-4">
                         <div class="btn-group">
-                            <button mat-button class="boton" (click)="cerrar()"><mat-icon
-                                    color="primary">check_circle</mat-icon>Confirmar Compra</button>
+                            <button [disabled]="inicioBoton" mat-button class="boton" (click)="cerrar()"><mat-icon
+                                    color="primary">check_circle</mat-icon>Confirmar Compra
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -28,3 +28,11 @@
 
     </div>
 </div>
+
+<p-toast position="top-right" key="tl">
+    <ng-template let-message pTemplate="message">
+        <div class="p-toast-message-text">
+          <div class="">{{message.summary}}</div>
+        </div>
+      </ng-template>
+</p-toast>

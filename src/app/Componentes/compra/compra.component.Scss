@@ -25,3 +25,9 @@
 .boton:hover{
   background-color: #c7d5e0;
 }
+
+::ng-deep{
+  .cdk-overlay-container{
+    background-color: rgba(0, 0, 0, 0.836);
+  }
+}

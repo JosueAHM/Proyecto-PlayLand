@@ -16,8 +16,14 @@ export class HeaderComponent {
 
   ocultarDiv = false;
   irLogin(){
-    this.router.navigate(['/paginaLogin']);
-    this.Color=false;
+    if(!this.comprobarUsuarioInicioSeccion()){
+      this.router.navigate(['/paginaLogin']);
+      this.Color=false;  
+    }
+    else{
+      localStorage.removeItem('token_value');
+      this.router.navigate(['']);
+    }
   }
 
   habilitarDiv(){
@@ -33,5 +39,9 @@ export class HeaderComponent {
   irPagPrincipalTienda() {
     this.router.navigate(['/paginaPrincipalTienda']);
   }
+
+  labelUsuarioInicio():string{
+    return (localStorage.getItem('token_value') == null) ? 'Iniciar sesión' : 'Cerrar sesión';
   }
+}
 

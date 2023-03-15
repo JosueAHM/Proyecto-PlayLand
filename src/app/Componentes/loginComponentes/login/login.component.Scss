@@ -69,3 +69,11 @@ a:hover {
   margin-top: 10px;
 }
 
+::ng-deep{
+  .mat-mdc-simple-snack-bar {
+    background-color: #171a21;
+  }
+  .mdc-snackbar__surface{
+    padding-right: 0!important;
+  }
+}

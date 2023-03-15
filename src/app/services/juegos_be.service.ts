@@ -29,15 +29,4 @@ export class JuegosService_BE {
   getJuegosColeccion(){
     return this.http.get(this.urlhost + this.urlApi+"/consulta-juegos-colecciones");
   }
-//   getProductosId(id: string){
-//     console.log(this.urlhost + this.urlApi+"/"+id);
-//     return this.http.get(this.urlhost + this.urlApi+"/"+id);
-//   }
-//   deleteProductos(id: string){
-//     return this.http.delete(this.urlhost + this.urlApi+"/"+id);
-//   }
-//   editarProductos(proveedor : ProductoModel){
-//     return this.http.put(this.urlhost + this.urlApi+"/"+proveedor.id,proveedor);
-//   }
-
 }
