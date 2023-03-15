@@ -7,25 +7,33 @@ import { JuegosService_BE } from 'src/app/services/juegos_be.service';
 import { JuegosModel } from 'src/app/Models/juegos.model';
 import { GeneralJuegos } from 'src/app/Models/consulta_general.model';
 import { Router } from '@angular/router';
+import { MessageService, PrimeNGConfig } from 'primeng/api';
+import { CarritoService } from 'src/app/services/carrito.service';
+import { CarritoEnviarModel } from 'src/app/Models/carrito.enviar';
 
 @Component({
   selector: 'app-pag-ultimos-lanzamientos',
   templateUrl: './pag-ultimos-lanzamientos.component.html',
-  styleUrls: ['./pag-ultimos-lanzamientos.component.css']
+  styleUrls: ['./pag-ultimos-lanzamientos.component.css'],
+  providers: [MessageService]
 })
 export class PagUltimosLanzamientosComponent implements OnInit {
 
   constructor(
-            private router : Router,
-            private _serviceJuego: JuegosService, 
-            private dialog: MatDialog,
-            private _serviceJuego_BE: JuegosService_BE
+    private router: Router, 
+    private _serviceJuego: JuegosService, 
+    private dialog: MatDialog,
+    private _serviceJuego_BE: JuegosService_BE,
+    private messageService: MessageService, 
+    private primengConfig: PrimeNGConfig,
+    private carritoService: CarritoService
   ) { }
 
   
   juegosDisponibles : JuegosModel[] = [];
 
   ngOnInit(): void {
+    this.primengConfig.ripple = true;
     this.obtenerJuego();
   }
 
@@ -75,17 +83,61 @@ export class PagUltimosLanzamientosComponent implements OnInit {
 
   stringModla = "";
 
-  validarComprar(){
+  validarComprar(juegoComprar:JuegosModel){
     if(localStorage.getItem('token_value') == null){
       this.validadorInicioSesion = true;
       this.stringModla = "Para poder comprar un juego el usuario debe tener iniciado la sesión.";
     }
+    else{
+      this._serviceJuego.setJuegosComprar(juegoComprar);
+      this.openDialogSesion();
+    }
   }
-  validarCarrito(){
+  validarCarrito(juegoComprar:JuegosModel){
     if(localStorage.getItem('token_value') == null){
       this.validadorInicioSesion = true;
       this.stringModla = "Para poder añadir un juego al carrito de compras el usuario debe tener la iniciado sesión.";
     }
+    else{
+      this.anadirCarrito(juegoComprar);
+      this.desabilitarCarrito = true;
+      this.showTopLeft();
+      setTimeout(() => {
+        this.desabilitarCarrito = false;
+       }, 3000);
+    }
+  }
+
+  showTopLeft() {
+    this.messageService.add({key: 'tl', severity:'success', summary: 'Juego agregado al carrito con exito', detail: 'Message Content',closable:false});
+  }
+
+  desabilitarCarrito = false;
+
+  anadirCarrito(juegoComprar:JuegosModel){
+    let validador = false;
+    let temporalEncioCarrito : CarritoEnviarModel = {
+      idCliente : 1,
+      transaccion : "BUSCAR_CARRITO"
+    }
+    this.carritoService.getCarrito(temporalEncioCarrito).subscribe((juego:any)=>{
+      juego.Table.forEach((juegoss:any)=>{
+        if(juegoss.id1==juegoComprar.id){
+          validador = true;
+        }
+      });
+      let accion = "EDITAR_CARRITO"
+      if(!validador){
+        accion = "AGREGAR_CARRITO"
+      }
+      let temporalEncioCarritos : CarritoEnviarModel = {
+        idCliente : 1,
+        idJuego : juegoComprar.id,
+        transaccion : accion
+      }
+      this.carritoService.agregarCarrito(temporalEncioCarritos).subscribe();
+    });
+
   }
 
   cambiarEstadoValidador(){
